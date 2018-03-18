@@ -4,7 +4,7 @@ $(document).ready(function() {
     $(document).on('click', '#iNewAccount', function(event) {
         event.preventDefault();
         // $('#modal').iziModal('setZindex', 99999);
-        // $('#modal').iziModal('open', { zindex: 99999 });
-        $('#modal').iziModal('open');
+        $('#modal-custom').iziModal('open', { zindex: 99999 });
+        // $('#modal-custom').iziModal('open');
     });
 });
