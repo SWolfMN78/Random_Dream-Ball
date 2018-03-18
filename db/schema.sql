@@ -19,7 +19,9 @@ CREATE TABLE userID (
 	id INT (10) AUTO_INCREMENT NOT NULL,
     userName VARCHAR (100) NOT NULL,
     passWord INT (10) NOT NULL,
-    teamName VARCHAR (100) NOT NULL,     
+    teamName VARCHAR (100) NOT NULL,
+    createdAt INT (10) NOT NULL,
+    updatedAt INT (10) NOT NULL,     
     PRIMARY KEY (id)
 );
 
@@ -27,5 +29,7 @@ CREATE TABLE skillTable (
 	id INT (10) AUTO_INCREMENT NOT NULL,
     charSpecialSkill VARCHAR (100) NOT NULL,
     skillWeight INT (10) NOT NULL,
+    createdAt INT (10) NOT NULL,
+    updatedAt INT (10) NOT NULL,
     PRIMARY KEY (id)
 );
