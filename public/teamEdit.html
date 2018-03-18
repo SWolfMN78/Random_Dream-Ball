@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>DB Team Edit Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootswatch Theme -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-bsvEK+YNVfNd1Ld4bz9xMEEWEDQDZMLT37OAK45h+mmV4t5nT9ZFs4lPonkivNY7" crossorigin="anonymous" />
+    <!-- Link to my jQuery information -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap JS file -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Izimodal modal library-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css" integrity="sha384-twsqDCMYZktKK4KMv8cXDnLhBCVchPMuxLKKh1azoa3vn5nKRF/8PK4GmIgD0JaW" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js" integrity="sha384-OCBM5wbr9X4XRMO0UcgNtJrfDZz4bo4c6PDZrxVN8zLSn6/B0CKZ/RUBRDDVqgt4" crossorigin="anonymous"></script>
+    <!-- responsive meta tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+    <div class="container">
+        <!--Container for player information submission-->
+        <!--Point of info will be Team name / Team Icon /  -->
+        <div class="row">
+            <div class="col">
+                <div>
+                    logo
+                </div>
+            </div>
+            <div class="col">
+                <h1>Roster Selector</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                Player Info
+                <div class="form-group">
+                    <!--Account Name information input-->
+                    <label for="exampleInputEmail1">Account Name:</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Team Name">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <!--Get the user's password information-->
+                    <label for="exampleInputEmail1">Team Moto:</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Team Moto">
+                </div>
+            </div>
+            <div class="col">
+                Player's roster
+                <table class="table table-hover">
+                    <thread>
+                        <tr>
+                            <th scope="col">Type</th>
+                            <th scope="col">Column heading</th>
+                            <th scope="col">Column heading</th>
+                            <th scope="col">Column heading</th>
+                        </tr>
+                    </thread>
+                    <tbody>
+                        <tr class="table-active">
+                            <th scope="row">Secondary</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                        </tr>
+                        <tr class="table-active">
+                            <th scope="row">Secondary</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col">
+                button column
+                <div class="row">
+                    <div>
+                        button - move information in to player's list
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        button - clear all information from player's list
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        button - move selected out of player's list
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                Table2 - available to draft
+                <table class="table table-hover">
+                    <thread>
+                        <tr>
+                            <th scope="col">Type</th>
+                            <th scope="col">Column heading</th>
+                            <th scope="col">Column heading</th>
+                            <th scope="col">Column heading</th>
+                        </tr>
+                    </thread>
+                    <tbody>
+                        <tr class="table-active">
+                            <th scope="row">Secondary</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                        </tr>
+                        <tr class="table-active">
+                            <th scope="row">Secondary</th>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="card-body" id="footer">
+        <p>First project for University of Minnesota coding bootcamp. © 2018 Random Dream-Ball . All rights reserved.</p>
+    </div>
+
+    <!-- Additional javascript files-->
+    <script src="assets/javascript/app.js"></script>
+    <!-- local CSS stylesheet-->
+    <link rel="stylesheet" type="public\assets\css\style.css" media="screen" href="main.css" />
+</body>
+
+</html>
