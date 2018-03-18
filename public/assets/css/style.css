@@ -24,4 +24,8 @@ background-image:url(/assets/img/dreamball.jpg);
 
 p {
 	font-size: 12px;
+
+#modal-custom {
+    display: none;
+    /* Hidden by default */
 }
