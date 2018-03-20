@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css?family=Amaranth");
 :root {
     --blue: #007bff;
@@ -67,6 +68,10 @@
 
 .centered {
     margin-top: 50px;
+}
+
+.centered {
+	margin-top: 50px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -99,6 +104,15 @@ p {
 /*Modal Infomation*/
 
 .hide {
+	background: green;
+	width: 50px;
+	height:30px;
+}
+
+p {
+	font-size: 12px;
+
+#modal-custom {
     display: none;
 }
 
