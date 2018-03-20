@@ -1,5 +1,5 @@
 INSERT INTO athletes (athleteName, homePlanet, powerPoints, specialSkill, athleteCost, createdAt, updatedAt) VALUES  
-('Shadow', 'Crolla V2PJ',10,0,10,'2018-01-01 00:00:00','2018-01-01 00:00:00'),
+('Timelord Alpha', 'Gallifrey',10,0,10,'2018-01-01 00:00:00','2018-01-01 00:00:00'),
 ('The Old Axeman', 'Xeswuyria',10,0,10,'2018-01-01 00:00:00','2018-01-01 00:00:00'),
 ('The Dark Eagle', 'Regriri',10,0,10,'2018-01-01 00:00:00','2018-01-01 00:00:00'),
 ('Doctor Old Sword', 'Joewei',10,0,10,'2018-01-01 00:00:00','2018-01-01 00:00:00'),
@@ -69,7 +69,7 @@ INSERT INTO athletes (athleteName, homePlanet, powerPoints, specialSkill, athlet
 ('Wild Tornado',  'Iepluenerth',4,1,12,'2018-01-01 00:00:00','2018-01-01 00:00:00'),
 ('The Accidental Tiger','Vastraiter',4,0,4,'2018-01-01 00:00:00','2018-01-01 00:00:00'),
 ('Moon Halo', 'Plolla ZHX',4,0,4,'2018-01-01 00:00:00','2018-01-01 00:00:00'),
-('Titanio', 'Stolla BS6C',3,0,3,'2018-01-01 00:00:00','2018-01-01 00:00:00'),
+('Master Keeper', 'Stolla BS6C',3,2,11,'2018-01-01 00:00:00','2018-01-01 00:00:00'),
 ('Icicle',  'Iesloyturn',3,1,11,'2018-01-01 00:00:00','2018-01-01 00:00:00'),
 ('Unarmed Wonder',  'Grauria',3,1,11,'2018-01-01 00:00:00','2018-01-01 00:00:00'),
 ('Confident Raccoon', 'Praater',3,0,3,'2018-01-01 00:00:00','2018-01-01 00:00:00'),
