@@ -3,8 +3,8 @@
     <h3><strong>MY DREAM TEAM</strong></h3>
     <br>
     <div class="row">
-      {{#each dreamballs}}
-        {{#if ownerID}}   
+      {{#each athletes}}
+        {{#if OwnerId}}
                 
           <div class="col-md-2">
             <button class=" change-dev green" 
@@ -17,11 +17,11 @@
             -->
           </div>
           <div class="col-md-10">
-            <p>{{id}}. {{charName}}</p>
+            <p>{{id}}. {{athleteName}}</p>
           </div>
                       
         {{/if}}
-      {{/each}}  
+      {{/each}}
     </div>
   </div>
 
@@ -31,8 +31,8 @@
     <h3><strong>DREAMBALL ROSTER</strong></h3>
     <br>
     <div class="row">
-      {{#each dreamballs}}
-        {{#unless ownerID}} 
+      {{#each athletes}}
+        {{#unless OwnerId}}
           
           <div class="col-md-2">
               <button class=" change-dev green"     
@@ -42,10 +42,10 @@
           </div>
 
           <div class="col-md-10">
-              <p>{{id}}. {{charName}}</p>
+              <p>{{id}}. {{athleteName}}</p>
           </div>
         {{/unless}}
-      {{/each}}              
+      {{/each}}
     </div>
   </div>
 </div>
