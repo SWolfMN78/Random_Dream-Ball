@@ -3,8 +3,11 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>DB Cover</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Google Fonts **Amaranth**-->
+    <link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
     <!--Bootswatch Theme -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-bsvEK+YNVfNd1Ld4bz9xMEEWEDQDZMLT37OAK45h+mmV4t5nT9ZFs4lPonkivNY7" crossorigin="anonymous" />
     <!-- Link to my jQuery information -->
@@ -12,11 +15,8 @@
     <!--Bootstrap JS file -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!--Izimodal modal library-->
-    <link rel="stylesheet" href="iziModal.min.css">
-    <!--Temporarily disable to test above link info-->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css" integrity="sha384-twsqDCMYZktKK4KMv8cXDnLhBCVchPMuxLKKh1azoa3vn5nKRF/8PK4GmIgD0JaW" crossorigin="anonymous" /> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js" integrity="sha384-OCBM5wbr9X4XRMO0UcgNtJrfDZz4bo4c6PDZrxVN8zLSn6/B0CKZ/RUBRDDVqgt4" crossorigin="anonymous"></script> -->
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css" integrity="sha384-twsqDCMYZktKK4KMv8cXDnLhBCVchPMuxLKKh1azoa3vn5nKRF/8PK4GmIgD0JaW" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js" integrity="sha384-OCBM5wbr9X4XRMO0UcgNtJrfDZz4bo4c6PDZrxVN8zLSn6/B0CKZ/RUBRDDVqgt4" crossorigin="anonymous" type="text/javascript"></script>
     <!-- responsive meta tag-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
@@ -24,62 +24,103 @@
 <body>
     <div class="landing-page">
         <!-- Main content starts here-->
-        <div class="container center">
+        <div class="jumbotron text-center" alt="Responsive image">
+            <blockquote class="blockquote">
+                <h1 class="card-title mb-0 gameTitle"><strong>Random Dream-Ball!</strong></h1>
+                <footer class="blockquote-footer gameSubTitle">Your Fantasy Battle League</footer>
+            </blockquote>
+        </div>
+
+        <!--Buttons for navigation-->
+        <div class="container">
             <div class="row">
-                <div class="col-lg-12" id="iCoverPage">
-                    <!--Content Text-->
-                    <h1>Random Dream-Ball!</h1>
-                    <div class="col-6" id="iSubCoverText">
-                        <!--Subtext to be fit in just over the main content text-->
-                        <h4><em>Your Fantasy Battle League</em></h4>
-                    </div>
+                <!--Open New User Modal to create an account-->
+                <div class="col">
+                    <!--Open the modal to have the enter their information if they would like or log in-->
+                    <button type="button" class="btn btn-primary" id="iNewAccount">New Owner</button>
                 </div>
-                <!--Button Controls to navigate to other pages-->
-                <div>
-                    <div>
-                        <!--Open New User Modal to create an account-->
-                        <div class="col-sm">
-                            <h2>Create an Account
-                                <h4><em>(New Owners):</em></h4>
-                            </h2>
-                        </div>
-                        <div class="col-sm">
-                            <button data-izimodal-iframeurl="button" data-izimodal-open="#modal-iframe" class="btn btn-primary" data-izimodal-transitionin="fadeInDown" id="iNewAccount">New Owner</button>
-                        </div>
-                    </div>
-                    <div>
-                        <!--Open Existing User Modal for login-->
-                        <div class="col-sm">
-                            <h2>Existing Owners Login:</h2>
-                        </div>
-                        <div class="col-sm">
-                            <button type="button" class="btn btn-secondary">Existing Owner</button>
-                        </div>
-                    </div>
-                    <div>
-                        <!--Open Existing User Modal for login-->
-                        <div class="col-sm">
-                            <h3>Game Rules:</h3>
-                        </div>
-                        <div class="col-sm">
-                            <button type="button" class="btn btn-outline-warning">Warning</button>
-                        </div>
-                    </div>
+                <div class="col">
+                    <h4>Create an Account
+                        <em>(New Owners):</em>
+                    </h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <!--Open Existing User Modal for login-->
+                    <button type="button" class="btn btn-secondary" id="iExisting">Existing Owner</button>
+                </div>
+                <div class="col-sm">
+                    <h2>Existing Owners Login:</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <!--Open Existing User Modal for login-->
+                    <button type="button" class="btn btn-outline-warning" id="iRules">Warning</button>
+                </div>
+                <div class="col-sm">
+                    <h3>Game Rules:</h3>
                 </div>
             </div>
         </div>
     </div>
+    </div>
 
+    <!--Modal structure for the buttons-->
+    <!--Signup Modal-->
+    <div id="modal-custom-signup" class="modal-custom">
+        <button data-iziModal-close class="icon-close">X</button>
+        <header>
+            <label>Sign Up!</label>
+        </header>
+        <div>
+            <section>
+                <!--Get the user's Password Info-->
+                <input type="text" placeholder="Username">
+                <!--Get the user's selected password-->
+                <input type="password" placeholder="Password">
+                <!--Have the user confirm their password-->
+                <input type="password" placeholder="Retype Password">
+                <label for="check"><input type="checkbox" name="checkbox" id="check" value="1"> I agree to the <u>Terms</u> of this game.</label>
+                <footer>
+                    <button data-iziModal-close>Cancel</button>
+                    <button class="submit">Log in</button>
+                </footer>
+            </section>
+        </div>
+    </div>
 
-    <!--Modal Panels for login/new account ** Will have to come back to this **-->
-    <div id="modal-custom">
-        <button data-iziModal-close class="icon-close"></button>
+    <!--Login Modal-->
+    <div id="modal-custom-login" class="modal-custom">
+        <button data-iziModal-close class="icon-close">X</button>
+        <header>
+            <label>Login!</label>
+        </header>
+        <div>
+            <section>
+                <!--Get the user's Name Info-->
+                <input type="text" placeholder="Username" id="">
+                <!--Get the user's Password Info-->
+                <input type="password" placeholder="Password" id="">
+                <!--Get the user's agreement to game terms and conditions Info-->
+                <footer>
+                    <button data-iziModal-close data-iziModal-transitionOut="bounceOutDown">Cancel</button>
+                    <button class="submit">Create Account</button>
+                </footer>
+            </section>
+        </div>
+    </div>
+
+    <div id="modal-custom" hidden>
+        <button data-iziModal-close class="icon-close">X</button>
         <header>
             <a href="" id="signin">Sign in</a>
             <a href="" class="active">New Account</a>
         </header>
         <div class="sections">
-            <section class="hide">
+            <section class="hide" id="iLogin">
+                <!-- Get the user's Password Info -->
                 <input type="text" placeholder="Username">
                 <input type="password" placeholder="Password">
                 <footer>
@@ -87,10 +128,12 @@
                     <button class="submit">Log in</button>
                 </footer>
             </section>
-            <section>
-                <input type="text" placeholder="Username">
-                <input type="text" placeholder="Email">
-                <input type="password" placeholder="Password">
+            <section id="iSignup"> -->
+                <!-- Get the user's Name Info-->
+                <input type="text" placeholder="Username" id="">
+                <!--Get the user's Password Info-->
+                <input type="password" placeholder="Password" id="">
+                <!--Get the user's agreement to game terms and conditions Info-->
                 <label for="check"><input type="checkbox" name="checkbox" id="check" value="1"> I agree to the <u>Terms</u>.</label>
                 <footer>
                     <button data-iziModal-close data-iziModal-transitionOut="bounceOutDown">Cancel</button>
@@ -103,16 +146,16 @@
     <!-- modal here for the rules page ** Come back to this once the above information has been figured out**-->
 
     <!-- Footer -->
-    <div class="card-body" id="footer">
-        <p>First project for University of Minnesota coding bootcamp. © 2018 Random Dream-Ball . All rights reserved.</p>
+    <div class="card-footer text-center" id="footer">
+        <p>Three Corners & One Center Group Project for University of Minnesota coding bootcamp. © 2018 Random Dream-Ball . All rights reserved.</p>
     </div>
 
     <!-- Additional javascript files-->
-    <script src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
     <!-- local CSS stylesheet-->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <!-- Modal required scripting info-->
-    <script src="iziModal.min.js" type="text/javascript"></script>
+    <!-- <script src="iziModal.min.js" type="text/javascript"></script> -->
 </body>
 
 </html>
