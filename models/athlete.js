@@ -1,12 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
 
   var Athlete  = sequelize.define("Athlete", {
-    // id: {
-    //   type: DataTypes.INTEGER,
-    //   autoIncrement: true,
-    //   primaryKey: true
-
-    // },
     athleteName: {
       type: DataTypes.STRING,
       //allowNull: false
@@ -25,6 +19,12 @@ module.exports = function(sequelize, DataTypes) {
     },
     athleteCost: {
       type: DataTypes.INTEGER,
+      //allowNull: false
+    },
+    // games injured
+    athleteInjured: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
       //allowNull: false
     },
   }, {
