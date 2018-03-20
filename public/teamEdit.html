@@ -3,18 +3,20 @@
 
 <head>
     <meta charset="utf-8" />
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>DB Team Editor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Google Fonts **Amaranth**-->
+    <link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
     <!--Bootswatch Theme -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-bsvEK+YNVfNd1Ld4bz9xMEEWEDQDZMLT37OAK45h+mmV4t5nT9ZFs4lPonkivNY7" crossorigin="anonymous" />
     <!-- Link to my jQuery information -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Bootstrap JS file -->
+    <!--Bootstrap JS file -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- Izimodal modal library-->
+    <!--Izimodal modal library-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css" integrity="sha384-twsqDCMYZktKK4KMv8cXDnLhBCVchPMuxLKKh1azoa3vn5nKRF/8PK4GmIgD0JaW" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js" integrity="sha384-OCBM5wbr9X4XRMO0UcgNtJrfDZz4bo4c6PDZrxVN8zLSn6/B0CKZ/RUBRDDVqgt4" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js" integrity="sha384-OCBM5wbr9X4XRMO0UcgNtJrfDZz4bo4c6PDZrxVN8zLSn6/B0CKZ/RUBRDDVqgt4" crossorigin="anonymous" type="text/javascript"></script>
     <!-- responsive meta tag-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
@@ -23,10 +25,10 @@
     <div class="container">
         <!--Container for player information submission-->
         <!--Point of info will be Team name / Team Icon /  -->
-        <div class="row">
+        <div class="row gameLogo">
             <div class="col">
-                <div>
-                    logo
+                <div class="logo">
+                    DB League
                 </div>
             </div>
             <div class="col">
@@ -46,88 +48,103 @@
                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Team Moto">
                 </div>
             </div>
-
-            <div class="col">
-                <h4> Player's roster</h4>
-                <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">List group item heading</h5>
-                            <small>3 days ago</small>
+            <!--Moved the infomration from a table to a a-href list grouping.  Additional list shoudl be dynamically created based on need.-->
+            <div>
+                <div class="col">
+                    <section>
+                        <div class="listbox-area">
+                            <div class="left-area">
+                                <span id="ss_elem"><h6> Your Line-up Roster:</h6> </span>
+                                <ul id="ss_elem_list" tabindex="0" role="listbox" aria-activedescendant="ss_elem_Rg">
+                                    <li id="ss_elem_Plyr0" role="option">Sample-Shadow</li>
+                                    <li id="ss_elem_Plyr1" role="option">Sample-The Old Axeman</li>
+                                    <li id="ss_elem_Plyr2" role="option">Sample-The Dark Eagle</li>
+                                    <li id="ss_elem_Plyr3" role="option">Sample-Doctor Old Sword</li>
+                                </ul>
+                            </div>
                         </div>
-                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                        <small>Donec id elit non mi porta.</small>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">List group item heading</h5>
-                            <small class="text-muted">3 days ago</small>
+                    </section>
+
+
+
+
+
+                    <div class="list-group playersRoster">
+                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">List group item heading</h5>
+                                <small>3 days ago</small>
+                            </div>
+                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                            <small>Donec id elit non mi porta.</small>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">List group item heading</h5>
+                                <small class="text-muted">3 days ago</small>
+                            </div>
+                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                            <small class="text-muted">Donec id elit non mi porta.</small>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div>
+                            <!-- Button - add selection to the player roster -->
+                            <button type="button" class="btn btn-secondary"><</button>
                         </div>
-                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                        <small class="text-muted">Donec id elit non mi porta.</small>
-                    </a>
-                </div>
-            </div>
-
-
-            <div class="col">
-                button column
-                <div class="row">
-                    <div>
-                        button - move information in to player's list
+                    </div>
+                    <div class="row">
+                        <div>
+                            <!--button - clear all information from player's list-->
+                            <button type="button" class="btn btn-outline-warning">X</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <!--button - move selected out of player's list-->
+                            <button type="button" class="btn btn-warning">></button>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div>
-                        button - clear all information from player's list
+                <!--Moved the infomration from a table to a a-href list grouping.  Additional list shoudl be dynamically created based on need.-->
+                <div class="col">
+                    <h4>Athlete Selection Roster</h4>
+                    <div class="list-group playersRoster">
+                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">List group item heading</h5>
+                                <small>3 days ago</small>
+                            </div>
+                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                            <small>Donec id elit non mi porta.</small>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">List group item heading</h5>
+                                <small class="text-muted">3 days ago</small>
+                            </div>
+                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                            <small class="text-muted">Donec id elit non mi porta.</small>
+                        </a>
                     </div>
                 </div>
-                <div class="row">
-                    <div>
-                        button - move selected out of player's list
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                Table2 - available to draft
-                <table class="table table-hover">
-                    <thread>
-                        <tr>
-                            <th scope="col">Type</th>
-                            <th scope="col">Column heading</th>
-                            <th scope="col">Column heading</th>
-                            <th scope="col">Column heading</th>
-                        </tr>
-                    </thread>
-                    <tbody>
-                        <tr class="table-active">
-                            <th scope="row">Secondary</th>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                        <tr class="table-active">
-                            <th scope="row">Secondary</th>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
-
     </div>
 
     <!-- Footer -->
-    <div class="card-body" id="footer">
-        <p>First project for University of Minnesota coding bootcamp. © 2018 Random Dream-Ball . All rights reserved.</p>
+    <div class="card-footer text-center" id="footer">
+        <p>Three Corners & One Center Group Project for University of Minnesota coding bootcamp. © 2018 Random Dream-Ball . All rights reserved.</p>
     </div>
 
     <!-- Additional javascript files-->
-    <script src="assets/javascript/app.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
     <!-- local CSS stylesheet-->
-    <link rel="stylesheet" type="public\assets\css\style.css" media="screen" href="main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <!-- Modal required scripting info-->
 </body>
 
 </html>

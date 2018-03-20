@@ -88,6 +88,12 @@ p {
     font-size: 11px;
 }
 
+.logo {
+    border-style: double;
+    border: rgb(255, 0, 0) solid 4px;
+    margin: 15pt;
+}
+
 #footer {
     background-color: #666666;
     border-top: #000000 solid 4px;
