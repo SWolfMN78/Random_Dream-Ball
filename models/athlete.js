@@ -1,14 +1,13 @@
-
 module.exports = function(sequelize, DataTypes) {
 
-  var DreamBall  = sequelize.define("DreamBall", {
+  var Athlete  = sequelize.define("Athlete", {
     // id: {
     //   type: DataTypes.INTEGER,
     //   autoIncrement: true,
     //   primaryKey: true
 
     // },
-    charName: {
+    athleteName: {
       type: DataTypes.STRING,
       //allowNull: false
     },
@@ -20,28 +19,29 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       //allowNull: false
     },
-    specialSkills: {
+    specialSkill: {
       type: DataTypes.INTEGER,
       //allowNull: false
     },
-    charCost: {
+    athleteCost: {
       type: DataTypes.INTEGER,
       //allowNull: false
     },
-    ownerID: {
-      type: DataTypes.INTEGER,
-      //allowNull: false
-    }
   }, {
     // timestamps: false
   });
 
-  
-// Export the database functions for the controller (catsController.js).
-return DreamBall;
+  Athlete.associate = function(models) {
+    Athlete.belongsTo(models.Owner, {
+      foreignKey: {
+        allowNull: false,
+        defaultValue: 1
+      }
+    });
+    // NOT POSSIBLE IN SEQUELIZE!!!  Cannot associate tables with non-'id' keys
+    // Athlete.hasOne(models.SpecialSkill, {  });
+  };
 
+  // Export the database functions for the controller.
+  return Athlete;
 };
-
-
-
-

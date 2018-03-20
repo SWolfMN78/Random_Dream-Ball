@@ -1,29 +1,26 @@
 module.exports = function(sequelize, DataTypes) {
 
-  var  UserID = sequelize.define("UserID", {
+  var  Owner = sequelize.define("Owner", {
     // id: {
     //   type: DataTypes.INTEGER,
     //   autoIncrement: true,
     //   primaryKey: true
-
     // },
     userName: {
       type: DataTypes.STRING,
       //allowNull: false
     },
-    
     passWord: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(10),
       //allowNull: false,
 
       validate: {
         len:{
-          args: [1, 5],
-          msg: "Your password is too long. Please keep it under 5 characters."
+          args: [1, 10],
+          msg: "Your password is too long. Please keep it under 10 characters."
         }
       }
     },
-
     teamName: {
       type: DataTypes.STRING,
       //allowNull: false
@@ -32,11 +29,10 @@ module.exports = function(sequelize, DataTypes) {
     // timestamps: false
   });
 
-  
-// Export the database functions for the controller (catsController.js).
-return UserID;
+  Owner.associate = function(models) {
+    Owner.hasMany(models.Athlete, {});
+  };
 
+  // Export the database functions for the controller.
+  return Owner;
 };
-
-
-
