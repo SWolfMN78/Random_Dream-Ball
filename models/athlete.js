@@ -7,18 +7,27 @@ module.exports = function(sequelize, DataTypes) {
     },
     homePlanet: {
       type: DataTypes.STRING,
+      defaultValue: "Earth"
       //allowNull: false
     },
     powerPoints: {
       type: DataTypes.INTEGER,
+      defaultValue: 1
       //allowNull: false
     },
     specialSkill: {
       type: DataTypes.INTEGER,
+      defaultValue: 0
+      //allowNull: false
+    },
+    isActive: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
       //allowNull: false
     },
     athleteCost: {
       type: DataTypes.INTEGER,
+      defaultValue: 1
       //allowNull: false
     },
     // games injured
