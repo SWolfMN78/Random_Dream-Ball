@@ -24,6 +24,14 @@ module.exports = function(sequelize, DataTypes) {
     teamName: {
       type: DataTypes.STRING,
       //allowNull: false
+    },
+    teamSlogan: {
+      type: DataTypes.STRING,
+      //allowNull: false
+    },
+    teamFunds: {
+      type: DataTypes.INTEGER,
+      defaultValue: 50
     }
   }, {
     // timestamps: false

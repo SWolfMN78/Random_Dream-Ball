@@ -9,8 +9,9 @@ var PORT = process.env.PORT || 3000;
 // Requiring our models for syncing
 var db = require("./models");
 
+// Sets up the Express app to handle data parsing
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // parse application/json
 app.use(bodyParser.json());
@@ -25,16 +26,12 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/dreamballsController.js");
-
-app.use(routes);
+//require("./controllers/htmlRoutes.js")(app);
+require("./controllers/athleteRoutes.js")(app);
+require("./controllers/ownerRoutes.js")(app);
 
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
-
-//app.listen(PORT, function() {
-  //console.log("App now listening at localhost:" + PORT);
 });
-
