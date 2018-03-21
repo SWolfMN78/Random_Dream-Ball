@@ -94,6 +94,14 @@ p {
     margin: 15pt;
 }
 
+.list-group {
+    width: 75%;
+}
+
+.mySQLBtns {
+    float: left;
+}
+
 #footer {
     background-color: #666666;
     border-top: #000000 solid 4px;

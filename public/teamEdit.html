@@ -25,6 +25,7 @@
     <div class="container">
         <!--Container for player information submission-->
         <!--Point of info will be Team name / Team Icon /  -->
+
         <div class="row gameLogo">
             <div class="col">
                 <div class="logo">
@@ -52,84 +53,57 @@
             <div>
                 <div class="col">
                     <section>
-                        <div class="listbox-area">
-                            <div class="left-area">
-                                <span id="ss_elem"><h6> Your Line-up Roster:</h6> </span>
-                                <ul id="ss_elem_list" tabindex="0" role="listbox" aria-activedescendant="ss_elem_Rg">
-                                    <li id="ss_elem_Plyr0" role="option">Sample-Shadow</li>
-                                    <li id="ss_elem_Plyr1" role="option">Sample-The Old Axeman</li>
-                                    <li id="ss_elem_Plyr2" role="option">Sample-The Dark Eagle</li>
-                                    <li id="ss_elem_Plyr3" role="option">Sample-Doctor Old Sword</li>
-                                </ul>
+                        <div id="list-example" class="list-group">Your Current Roster:
+                            <a href="#" id="plg00" class="list-group-item list-group-item-action">
+                                    Shadow</a>
+                            <a href="#" d="plg00" class="list-group-item list-group-item-action">
+                                    The Old Axeman</a>
+                            <a href="#" d="plg00" class="list-group-item list-group-item-action">
+                                    The Dark Eagle</a>
+                        </div>
+                    </section>
+                    <section class="mySQLBtns">
+                        <div class="col">
+                            <div class="row">
+                                <div>
+                                    <!-- Button - add selection to the player roster -->
+                                    <button type="button" class="btn btn-secondary"><</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <!--button - clear all information from player's list-->
+                                    <button type="button" class="btn btn-outline-warning">X</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <!--button - move selected out of player's list-->
+                                    <button type="button" class="btn btn-warning">></button>
+                                </div>
                             </div>
                         </div>
                     </section>
-
-
-
-
-
-                    <div class="list-group playersRoster">
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">List group item heading</h5>
-                                <small>3 days ago</small>
-                            </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                            <small>Donec id elit non mi porta.</small>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">List group item heading</h5>
-                                <small class="text-muted">3 days ago</small>
-                            </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                            <small class="text-muted">Donec id elit non mi porta.</small>
-                        </a>
-                    </div>
-
-                </div>
-                <div class="col">
-                    <div class="row">
+                    <!--Moved the infomration from a table to a a-href list grouping.  Additional list shoudl be dynamically created based on need.-->
+                    <section>
                         <div>
-                            <!-- Button - add selection to the player roster -->
-                            <button type="button" class="btn btn-secondary"><</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div>
-                            <!--button - clear all information from player's list-->
-                            <button type="button" class="btn btn-outline-warning">X</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div>
-                            <!--button - move selected out of player's list-->
-                            <button type="button" class="btn btn-warning">></button>
-                        </div>
-                    </div>
-                </div>
-                <!--Moved the infomration from a table to a a-href list grouping.  Additional list shoudl be dynamically created based on need.-->
-                <div class="col">
-                    <h4>Athlete Selection Roster</h4>
-                    <div class="list-group playersRoster">
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">List group item heading</h5>
-                                <small>3 days ago</small>
+                            <div id="list-example" class="list-group">Athlete Roster:
+                                <!--Bootstrap requires that all <a> have an id.  One may need to be created dynamically for the list to be entered.-->
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    Broken Wolf</a>
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    The Brass Wasp</a>
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    The Ice Bear</a>
+                                <a href="#" i class="list-group-item list-group-item-action">
+                                    Good Killer </a>
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    The Mammoth Bear</a>
+                                <a href="#" id="alg05" class="list-group-item list-group-item-action">
+                                    Scarlet King</a>
                             </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                            <small>Donec id elit non mi porta.</small>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">List group item heading</h5>
-                                <small class="text-muted">3 days ago</small>
-                            </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                            <small class="text-muted">Donec id elit non mi porta.</small>
-                        </a>
-                    </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
