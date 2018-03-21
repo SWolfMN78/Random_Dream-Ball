@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="col-sm">
                     <!--Open Existing User Modal for login-->
-                    <button type="button" class="btn btn-outline-warning" id="iRules">Warning</button>
+                    <button type="button" class="btn btn-outline-warning" id="iRules">Rules</button>
                 </div>
                 <div class="col-sm">
                     <h3>Game Rules:</h3>
@@ -79,9 +79,9 @@
                 <!--Get the user's Password Info-->
                 <input type="text" placeholder="Username">
                 <!--Get the user's selected password-->
-                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Password - No more than 10 digits.">
                 <!--Have the user confirm their password-->
-                <input type="password" placeholder="Retype Password">
+                <input type="password" placeholder="Retype Password - No more than 10 digits.">
                 <label for="check"><input type="checkbox" name="checkbox" id="check" value="1"> I agree to the <u>Terms</u> of this game.</label>
                 <footer>
                     <button data-iziModal-close>Cancel</button>
@@ -113,10 +113,64 @@
     </div>
 
     <!-- modal here for the rules page ** Come back to this once the above information has been figured out**-->
+    <div id="modal-custom-rules" class="modal-custom">
+        <button data-iziModal-close class="icon-close">X</button>
+        <header>
+            <label>Da'Rules</label>
+        </header>
+        <div>
+            <section>
+                <!--Display the rules-->
+                <p>
+                    Game Rules:
+                    <br> Welcome to Random Dream Ball – Your Fantasy Battle League. You are the owner of a galactic dream-ball team and your management skills will determine your success in the Universe!!!
+                    <br> If this is your first time entering the battle field we strongly suggest you log in as a new owner (with credit card in hand) and provide us with your very intimate personal information so that we can inundate you with expansive
+                    universes, galactic features, and pumped-up galactic superheroes.
+                    <br> If this is not your first time playing Random Dream Ball, then click on the existing owner button and let’s begin the FANTASY!!!
+                    <br> It is time to select your team:
+                    <ul>
+                        <li>
+                            You have 50 credits to select an incredible dream-ball team.
+                        </li>
+                        <li>
+                            Use the scroll down menu to view the players available to draft, use them credits wisely as some players have special skills called blockers and bruisers.
+                            <li>
+                                Blockers – Prevent scoring by lower skilled players.
+                            </li>
+                            <li>
+                                Bruisers – Injure an opponent for 2 rounds, but highest skilled player still scores.
+                            </li>
+                        </li>
+
+                        <li>
+                            Select 6 Battle League superheroes and up to 6 benchwarmers (12 max). Will need them bench warming heroes for when a bruiser knocks your player out for 2 rounds.
+                        </li>
+                        <li>
+                            Now that you selected your team you have time now to review your team’s stats and determine if you need to make any Dream-Ball trades.
+                        </li>
+                        <li>
+                            If a trade is needed highlight the player and send him back to the draft pile
+                        </li>
+                        <li>
+                            Once your confident in your selections let’s begin the Greatest Dream-Ball Battle in the Universe!!!
+                        </li>
+                        <li>
+                            Press “BATTLE”.
+                        </li>
+
+                    </ul>
+
+                </p>
+                <footer>
+                    <button data-iziModal-close data-iziModal-transitionOut="bounceOutDown">Exit</button>
+                </footer>
+            </section>
+        </div>
+    </div>
 
     <!-- Footer -->
 
-      
+
     <div class="card-footer text-center" id="footer">
         <p>Three Corners & One Center Group Project for University of Minnesota coding bootcamp. © 2018 Random Dream-Ball . All rights reserved.</p>
     </div>
