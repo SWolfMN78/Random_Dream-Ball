@@ -25,7 +25,6 @@
     <div class="container">
         <!--Container for player information submission-->
         <!--Point of info will be Team name / Team Icon /  -->
-
         <div class="row gameLogo">
             <div class="col">
                 <div class="logo">
@@ -52,15 +51,16 @@
             <!--Moved the infomration from a table to a a-href list grouping.  Additional list shoudl be dynamically created based on need.-->
             <div>
                 <div class="col">
-                    <section>
-                        <div id="list-example" class="list-group">Your Current Roster:
-                            <a href="#" id="plg00" class="list-group-item list-group-item-action">
-                                    Shadow</a>
-                            <a href="#" d="plg00" class="list-group-item list-group-item-action">
-                                    The Old Axeman</a>
-                            <a href="#" d="plg00" class="list-group-item list-group-item-action">
-                                    The Dark Eagle</a>
-                        </div>
+                    <section value="Player Info">
+                        <form action="#">
+                            <div class="form-group" class="list-group">
+                                <select multiple="" class="form-control" id="exampleSelect2">
+                                <option><a href="#" d="plg00" class="list-group-item list-group-item-action">The Dark Eagle</a></option>
+                                <option><a href="#" d="plg00" class="list-group-item list-group-item-action">The Old Axeman</a></option>
+                                <option><a href="#" id="plg00" class="list-group-item list-group-item-action">Shadow</a></option>
+                                </select>
+                            </div>
+                        </form>
                     </section>
                     <section class="mySQLBtns">
                         <div class="col">
@@ -87,21 +87,18 @@
                     <!--Moved the infomration from a table to a a-href list grouping.  Additional list shoudl be dynamically created based on need.-->
                     <section>
                         <div>
-                            <div id="list-example" class="list-group">Athlete Roster:
-                                <!--Bootstrap requires that all <a> have an id.  One may need to be created dynamically for the list to be entered.-->
-                                <a href="#" class="list-group-item list-group-item-action">
-                                    Broken Wolf</a>
-                                <a href="#" class="list-group-item list-group-item-action">
-                                    The Brass Wasp</a>
-                                <a href="#" class="list-group-item list-group-item-action">
-                                    The Ice Bear</a>
-                                <a href="#" i class="list-group-item list-group-item-action">
-                                    Good Killer </a>
-                                <a href="#" class="list-group-item list-group-item-action">
-                                    The Mammoth Bear</a>
-                                <a href="#" id="alg05" class="list-group-item list-group-item-action">
-                                    Scarlet King</a>
-                            </div>
+                            <form action="#">
+                                <div class="form-group" class="list-group">
+                                    <select multiple="" class="form-control" id="exampleSelect2">
+                                        <option><a href="#" class="list-group-item list-group-item-action">Broken Wolf</a></option>
+                                        <option><a href="#" class="list-group-item list-group-item-action">The Brass Wasp</a></option>
+                                        <option><a href="#" class="list-group-item list-group-item-action">The Ice Bear</a></option>
+                                        <option><a href="#" class="list-group-item list-group-item-action">Good Killer </a></option>
+                                        <option><a href="#" class="list-group-item list-group-item-action">The Mammoth Bear</a></option>
+                                        <option><a href="#" class="list-group-item list-group-item-action">Scarlet King</a></option>
+                                    </select>
+                                </div>
+                            </form>
                         </div>
                     </section>
                 </div>
