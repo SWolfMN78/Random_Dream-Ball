@@ -3,18 +3,20 @@
 
 <head>
     <meta charset="utf-8" />
-
-    <title>DB Team Edit Page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DB Team Editor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Google Fonts **Amaranth**-->
+    <link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
     <!--Bootswatch Theme -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-bsvEK+YNVfNd1Ld4bz9xMEEWEDQDZMLT37OAK45h+mmV4t5nT9ZFs4lPonkivNY7" crossorigin="anonymous" />
     <!-- Link to my jQuery information -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Bootstrap JS file -->
+    <!--Bootstrap JS file -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- Izimodal modal library-->
+    <!--Izimodal modal library-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css" integrity="sha384-twsqDCMYZktKK4KMv8cXDnLhBCVchPMuxLKKh1azoa3vn5nKRF/8PK4GmIgD0JaW" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js" integrity="sha384-OCBM5wbr9X4XRMO0UcgNtJrfDZz4bo4c6PDZrxVN8zLSn6/B0CKZ/RUBRDDVqgt4" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js" integrity="sha384-OCBM5wbr9X4XRMO0UcgNtJrfDZz4bo4c6PDZrxVN8zLSn6/B0CKZ/RUBRDDVqgt4" crossorigin="anonymous" type="text/javascript"></script>
     <!-- responsive meta tag-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
@@ -23,10 +25,11 @@
     <div class="container">
         <!--Container for player information submission-->
         <!--Point of info will be Team name / Team Icon /  -->
-        <div class="row">
+
+        <div class="row gameLogo">
             <div class="col">
-                <div>
-                    logo
+                <div class="logo">
+                    DB League
                 </div>
             </div>
             <div class="col">
@@ -46,91 +49,77 @@
                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Team Moto">
                 </div>
             </div>
-            <div class="col">
-                Player's roster
-                <table class="table table-hover">
-                    <thread>
-                        <tr>
-                            <th scope="col">Type</th>
-                            <th scope="col">Column heading</th>
-                            <th scope="col">Column heading</th>
-                            <th scope="col">Column heading</th>
-                        </tr>
-                    </thread>
-                    <tbody>
-                        <tr class="table-active">
-                            <th scope="row">Secondary</th>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                        <tr class="table-active">
-                            <th scope="row">Secondary</th>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col">
-                button column
-                <div class="row">
-                    <div>
-                        button - move information in to player's list
-                    </div>
+            <!--Moved the infomration from a table to a a-href list grouping.  Additional list shoudl be dynamically created based on need.-->
+            <div>
+                <div class="col">
+                    <section>
+                        <div id="list-example" class="list-group">Your Current Roster:
+                            <a href="#" id="plg00" class="list-group-item list-group-item-action">
+                                    Shadow</a>
+                            <a href="#" d="plg00" class="list-group-item list-group-item-action">
+                                    The Old Axeman</a>
+                            <a href="#" d="plg00" class="list-group-item list-group-item-action">
+                                    The Dark Eagle</a>
+                        </div>
+                    </section>
+                    <section class="mySQLBtns">
+                        <div class="col">
+                            <div class="row">
+                                <div>
+                                    <!-- Button - add selection to the player roster -->
+                                    <button type="button" class="btn btn-secondary"><</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <!--button - clear all information from player's list-->
+                                    <button type="button" class="btn btn-outline-warning">X</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <!--button - move selected out of player's list-->
+                                    <button type="button" class="btn btn-warning">></button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!--Moved the infomration from a table to a a-href list grouping.  Additional list shoudl be dynamically created based on need.-->
+                    <section>
+                        <div>
+                            <div id="list-example" class="list-group">Athlete Roster:
+                                <!--Bootstrap requires that all <a> have an id.  One may need to be created dynamically for the list to be entered.-->
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    Broken Wolf</a>
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    The Brass Wasp</a>
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    The Ice Bear</a>
+                                <a href="#" i class="list-group-item list-group-item-action">
+                                    Good Killer </a>
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    The Mammoth Bear</a>
+                                <a href="#" id="alg05" class="list-group-item list-group-item-action">
+                                    Scarlet King</a>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-                <div class="row">
-                    <div>
-                        button - clear all information from player's list
-                    </div>
-                </div>
-                <div class="row">
-                    <div>
-                        button - move selected out of player's list
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                Table2 - available to draft
-                <table class="table table-hover">
-                    <thread>
-                        <tr>
-                            <th scope="col">Type</th>
-                            <th scope="col">Column heading</th>
-                            <th scope="col">Column heading</th>
-                            <th scope="col">Column heading</th>
-                        </tr>
-                    </thread>
-                    <tbody>
-                        <tr class="table-active">
-                            <th scope="row">Secondary</th>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                        <tr class="table-active">
-                            <th scope="row">Secondary</th>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
-
     </div>
 
     <!-- Footer -->
-    <div class="card-body" id="footer">
-        <p>Second project for University of Minnesota coding bootcamp. © 2018 Random Dream-Ball . All rights reserved.</p>
+
+    <div class="card-footer text-center" id="footer">
+        <p>Three Corners & One Center Group Project for University of Minnesota coding bootcamp. © 2018 Random Dream-Ball . All rights reserved.</p>
     </div>
 
     <!-- Additional javascript files-->
-    <script src="assets/javascript/app.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
     <!-- local CSS stylesheet-->
-    <link rel="stylesheet" type="public\assets\css\style.css" media="screen" href="main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <!-- Modal required scripting info-->
 </body>
 
 </html>
