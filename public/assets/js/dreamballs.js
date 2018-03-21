@@ -10,7 +10,7 @@ $(function() {
     };
 
     // Send the PUT request.
-    $.ajax("/api/dreamballs/" + id, {
+    $.ajax("/api/athletes/" + id, {
       type: "PUT",
       data: newDevState
     }).then(
@@ -32,12 +32,12 @@ $(function() {
     };
 
     // Send the POST request.
-    $.ajax("/api/dreamballs", {
+    $.ajax("/api/athletes", {
       type: "POST",
       data: newDreamBall
     }).then(
       function() {
-        console.log("created new dreamball");
+        console.log("created new athlete");
         // Reload the page to get the updated list
         location.reload();
       }
@@ -56,7 +56,7 @@ $(function() {
     };
 
     // Send the POST request.
-    $.ajax("/api/userids", {
+    $.ajax("/api/owners", {
       type: "POST",
       data: newUserID
     }).then(
@@ -68,15 +68,15 @@ $(function() {
     );
   });
 
-  $(".delete-dreamball").on("click", function(event) {
+  $(".delete-athlete").on("click", function(event) {
     var id = $(this).data("id");
-    console.log("deleted dreamball");
+    console.log("deleted athlete");
     // Send the DELETE request.
-    $.ajax("/api/dreamballs/" + id, {
+    $.ajax("/api/athletes/" + id, {
       type: "DELETE",
     }).then(
       function() {
-        console.log("deleted dreamball", id);
+        console.log("deleted athlete", id);
         // Reload the page to get the updated list
         location.reload();
       }
