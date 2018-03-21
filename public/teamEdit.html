@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>DB Team Editor</title>
+    <title>DB Owner Staging Area</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--Google Fonts **Amaranth**-->
     <link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
@@ -22,48 +22,78 @@
 </head>
 
 <body>
+    <!--Container for player information submission-->
     <div class="container">
-        <!--Container for player information submission-->
         <!--Point of info will be Team name / Team Icon /  -->
-        <div class="row gameLogo">
-            <div class="col">
-                <div class="logo">
-                    DB League
-                </div>
-            </div>
-            <div class="col">
-                <h1>Roster Selector</h1>
-            </div>
-        </div>
         <div class="row">
-            <div class="col">
-                Player Info
-                <div class="form-group">
-                    <!--Account Name information input-->
-                    <label for="exampleInputEmail1">Account Name:</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Team Name">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                    <!--Get the user's password information-->
-                    <label for="exampleInputEmail1">Team Moto:</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Team Moto">
-                </div>
+            <div class="col-md-6">
+                <section>
+                    <div class="row">
+                        <legend>Team Info Section</legend>
+                        <div class=" col-md-12 form-group row">
+                            <label class="col-md-2 col-form-label" for="teamName">Team Name:</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" id="iTeamName" aria-describedby="teamNameInfo" placeholder="Enter your team's name">
+                            </div>
+                            <label class="col-md-2 col-form-label" for="teamName">Team Motto:</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" id="iTeamMotto" aria-describedby="teamNameInfo" placeholder="Enter your team's slogan!">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <legend>Team Icon:</legend>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div>
+                                <!--Button selection icons will be tied to these items this is just a place holder.-->
+                                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                    <div class="btn-group mr-2" role="group" aria-label="First group">
+                                        <button type="button" class="btn btn-secondary">1</button>
+                                        <button type="button" class="btn btn-secondary">2</button>
+                                        <button type="button" class="btn btn-secondary">3</button>
+                                        <button type="button" class="btn btn-secondary">4</button>
+                                    </div>
+                                    <div class="btn-group mr-2" role="group" aria-label="Second group">
+                                        <button type="button" class="btn btn-secondary">5</button>
+                                        <button type="button" class="btn btn-secondary">6</button>
+                                        <button type="button" class="btn btn-secondary">7</button>
+                                    </div>
+                                    <div class="btn-group" role="group" aria-label="Third group">
+                                        <button type="button" class="btn btn-secondary">8</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section> <br>
+                    <div class="card border-secondary mb-3" style="max-width: 20rem;">
+                        <div class="card-header">Upcoming Challengers:</div>
+                        <div class="card-body">
+                            <a href="#" class="card-link">Sample Location 1</a>
+                            <a href="#" class="card-link">Sample Location 2</a>
+                        </div>
+                    </div>
+                </section>
             </div>
             <!--Moved the infomration from a table to a a-href list grouping.  Additional list shoudl be dynamically created based on need.-->
-            <div>
-                <div class="col">
-                    <section value="Player Info">
-                        <form action="#">
-                            <div class="form-group" class="list-group">
-                                <select multiple="" class="form-control" id="exampleSelect2">
-                                <option><a href="#" d="plg00" class="list-group-item list-group-item-action">The Dark Eagle</a></option>
-                                <option><a href="#" d="plg00" class="list-group-item list-group-item-action">The Old Axeman</a></option>
-                                <option><a href="#" id="plg00" class="list-group-item list-group-item-action">Shadow</a></option>
-                                </select>
-                            </div>
-                        </form>
-                    </section>
-                    <section class="mySQLBtns">
-                        <div class="col">
+            <div class="col-md-6">
+                <section> Roster Info
+                    <div class="row">
+                        <div class="col-md-5">
+                            <form action="#">
+                                <div class="form-group" class="list-group">
+                                    <select multiple="" class="form-control" id="exampleSelect2">
+                                            <option><a href="#" class="list-group-item list-group-item-action">The Dark Eagle</a></option>
+                                            <option><a href="#" d="plg00" class="list-group-item list-group-item-action">The Old Axeman</a></option>
+                                            <option><a href="#" id="plg00" class="list-group-item list-group-item-action">Shadow</a></option>
+                                        </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-2">
                             <div class="row">
                                 <div>
                                     <!-- Button - add selection to the player roster -->
@@ -83,31 +113,63 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
-                    <!--Moved the infomration from a table to a a-href list grouping.  Additional list shoudl be dynamically created based on need.-->
-                    <section>
-                        <div>
+                        <!--Moved the infomration from a table to a a-href list grouping.  Additional list shoudl be dynamically created based on need.-->
+                        <div class="col-md-5">
                             <form action="#">
                                 <div class="form-group" class="list-group">
                                     <select multiple="" class="form-control" id="exampleSelect2">
-                                        <option><a href="#" class="list-group-item list-group-item-action">Broken Wolf</a></option>
-                                        <option><a href="#" class="list-group-item list-group-item-action">The Brass Wasp</a></option>
-                                        <option><a href="#" class="list-group-item list-group-item-action">The Ice Bear</a></option>
-                                        <option><a href="#" class="list-group-item list-group-item-action">Good Killer </a></option>
-                                        <option><a href="#" class="list-group-item list-group-item-action">The Mammoth Bear</a></option>
-                                        <option><a href="#" class="list-group-item list-group-item-action">Scarlet King</a></option>
-                                    </select>
+                                            <option><a href="#" class="list-group-item list-group-item-action">Broken Wolf</a></option>
+                                            <option><a href="#" class="list-group-item list-group-item-action">The Brass Wasp</a></option>
+                                            <option><a href="#" class="list-group-item list-group-item-action">The Ice Bear</a></option>
+                                            <option><a href="#" class="list-group-item list-group-item-action">Good Killer </a></option>
+                                            <option><a href="#" class="list-group-item list-group-item-action">The Mammoth Bear</a></option>
+                                            <option><a href="#" class="list-group-item list-group-item-action">Scarlet King</a></option>
+                                        </select>
                                 </div>
                             </form>
                         </div>
-                    </section>
-                </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <fieldset disabled="">
+                                <label class="control-label" for="disabledInput">Player Funds:</label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">
+                            </fieldset>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <fieldset disabled="">
+                                <label class="control-label" for="disabledInput">Athelete Cost:</label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">
+                            </fieldset>
+                        </div>
+                    </div>
+                </section>
+                <section>Active LineUp
+                    <div class="row">
+                        <div class="list-group col-md-12">
+                            <a href="#" class="list-group-item list-group-item-action active">Athelete Data Here</a>
+                            <a href="#" class="list-group-item list-group-item-action">Athelete Data Here</a>
+                            <a href="#" class="list-group-item list-group-item-action disabled">Athelete Data Here</a>
+                        </div>
+                    </div>
+                </section>
+                <section> Final Buttons
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-primary btn-lg">Large button</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-primary btn-lg">Large button</button>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
 
     <!-- Footer -->
-
     <div class="card-footer text-center" id="footer">
         <p>Three Corners & One Center Group Project for University of Minnesota coding bootcamp. © 2018 Random Dream-Ball . All rights reserved.</p>
     </div>
