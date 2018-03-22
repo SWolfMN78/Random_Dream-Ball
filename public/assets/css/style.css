@@ -32,32 +32,25 @@
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-.dreamballImage {
-    opacity: 0.50;
-    filter: alpha(opacity=50);
-    z-index: 1;
+
+/*Cover Page Specific CSS*/
+
+.background {
+    background-image: url(../img/dreamballBK1.jpg);
+    background-size: cover;
+    background-image: no-repeat;
 }
 
-.centered {
-    margin-top: 50px;
+.mc1 {
+    height: 200px;
+    margin: 5px;
+    padding: 10px;
+    background-color: #777;
 }
 
-.centered {
-    margin-top: 50px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.green {
-    background: green;
-    width: 50px;
-    height: 30px;
-}
-
-p {
-    font-size: 11px;
+.welcImg {
+    height: 200px;
+    width: 50%;
 }
 
 #footer {
@@ -73,13 +66,7 @@ p {
 }
 
 
-/*Cover Page Specific CSS*/
-
-.mainheader {
-    font-size: 40px;
-}
-
-.jumbotron {
+/* .jumbotron {
     background-image: url(../img/dreamballBK1.jpg);
     margin-top: 10px;
     padding-top: 10%;
@@ -88,9 +75,10 @@ p {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
-}
+} */
 
-.gameTitle {
+
+/* .gameTitle {
     font-family: "Times New Roman", Times, serif;
     color: rgb(255, 255, 255);
     font-size: 80px;
@@ -103,16 +91,10 @@ p {
     font-size: 50px;
     font-family: 'Amaranth';
     font-style: italic;
-}
+} */
 
 
 /*Team Editor Page CSS*/
-
-.logo {
-    border-style: double;
-    border: rgb(255, 0, 0) solid 4px;
-    margin: 15pt;
-}
 
 .list-group {
     width: 75%;
