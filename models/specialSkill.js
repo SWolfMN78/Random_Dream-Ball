@@ -13,14 +13,6 @@ module.exports = function(sequelize, DataTypes) {
     // timestamps: false
   });
 
-  // NOT POSSIBLE IN SEQUELIZE!!!  Cannot associate tables with non-'id' keys
-  // SpecialSkill.associate = function(models) {
-  //   SpecialSkill.belongsTo(models.Athlete, {
-  //     foreignKey: 'specialSkill',
-  //     as: 'athleteSkill',
-  //     foreignKey: 'specialSkill',
-  //   });
-  // };
   SpecialSkill.associate = function(models) {
     SpecialSkill.hasMany(models.Athlete, {});
   };

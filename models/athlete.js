@@ -15,11 +15,6 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: 1
       //allowNull: false
     },
-    // specialSkill: {
-    //   type: DataTypes.INTEGER,
-    //   defaultValue: 0
-    //   //allowNull: false
-    // },
     isActive: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
@@ -53,8 +48,6 @@ module.exports = function(sequelize, DataTypes) {
         defaultValue: 1
       }
     });
-    // NOT POSSIBLE IN SEQUELIZE!!!  Cannot associate tables with non-'id' keys
-    // Athlete.hasOne(models.SpecialSkill, {  });
   };
 
   // Export the database functions for the controller.
