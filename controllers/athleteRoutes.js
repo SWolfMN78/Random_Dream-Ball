@@ -21,11 +21,16 @@ module.exports = function(app) {
   app.get("/api/athletes/team/:OwnerId", function(req, res) {
     // findAll returns all entries for a table when used with no options
     db.Athlete.findAll({
+      attributes: ['id', 'athleteName', 'homePlanet', 'powerPoints', 'specialSkill', 'isActive', 'athleteInjured'],
       where: {
         OwnerId: req.params.OwnerId
-      }
+      },
+      include: [{
+        model: db.Owner,
+        attributes: ['userName', 'teamName']
+      }]
     }).then(function(dbResult) {
-      console.log('find team result:', dbResult);
+      // console.log('find team result:', dbResult);
       var athletes = [];
 
       dbResult.map(function(athlete) {
@@ -55,8 +60,8 @@ module.exports = function(app) {
   // PUT route for updating athletess. We can access the updated athlete in req.body
   app.put("/api/athletes/owner/:id", function(req, res) {
     // Update takes in an object describing the properties we want to update, and
-      // we use where to describe which objects we want to update
-    console.log(req.body);
+    // we use where to describe which objects we want to update
+    // console.log(req.body);
     db.Athlete.update({
       // athleteName: req.body.athleteName,
       OwnerId: req.body.OwnerId
