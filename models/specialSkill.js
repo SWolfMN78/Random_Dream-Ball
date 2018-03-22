@@ -21,6 +21,9 @@ module.exports = function(sequelize, DataTypes) {
   //     foreignKey: 'specialSkill',
   //   });
   // };
+  SpecialSkill.associate = function(models) {
+    SpecialSkill.hasMany(models.Athlete, {});
+  };
 
   // Export the database functions for the controller.
   return SpecialSkill;

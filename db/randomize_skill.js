@@ -53,21 +53,21 @@ lr.on('line', function (line)
   // further cheat by manually making an if-then-else block of skills
   if (rnd < 7)
   {
-    skill = 0;
+    skill = 1;
   } else if (rnd < 9)
   {
-    skill = 1;
+    skill = 2;
   } else
   {
-    skill = 2;
+    skill = 3;
   }
 
   var athlete = line.split(',');
   var power = parseInt(athlete[2]);
-  var cost = power + (skill ? 8 : 0);
+  var cost = power + ((skill>1) ? 8 : 0);
 
   var output = [athlete[0], athlete[1], power, skill, cost].join(',');
-  fs.appendFile('seedAthletes.txt', output + '),\n', function (err)
+  fs.appendFile('seedAthletes.txt', output + ",'2018-01-01 00:00:00','2018-01-01 00:00:00'),\n", function (err)
   {
     if (err) throw err;
   });
