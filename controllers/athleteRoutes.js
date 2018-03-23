@@ -13,7 +13,7 @@ module.exports = function(app) {
       });
 
       // We have access to the athletes as an argument inside of the callback function
-      res.render('index', { athletes: athletes });
+      res.render('index', athletes);
     });
   });
                 
