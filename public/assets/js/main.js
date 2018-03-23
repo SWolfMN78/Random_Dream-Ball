@@ -4,6 +4,7 @@ $(document).ready(function() {
 });
 
 //Set up New Account Information
+$()
 
 //Below is the modal information that has been cleaned up.
 $("#modal-custom-signup").iziModal({
