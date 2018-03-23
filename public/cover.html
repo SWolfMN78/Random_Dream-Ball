@@ -22,6 +22,7 @@
 </head>
 
 <body>
+
     <div class="landing-page">
         <!-- Main content starts here-->
         <div class="jumbotron text-center" alt="Responsive image">
@@ -35,44 +36,47 @@
         <div class="container">
             <div class="row">
                 <!--Open New User Modal to create an account-->
-                <div class="col">
+                <div class="col-sm-4">
                     <!--Open the modal to have the enter their information if they would like or log in-->
-                    <button type="button" class="btn btn-primary" id="iNewAccount">New Owner</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" id="iNewAccount">New Owner</button>
                 </div>
-                <div class="col">
-                    <h4>Create an Account
+                <!-- <div class="col"> -->
+                    <!-- <h4>Create an Account
                         <em>(New Owners):</em>
-                    </h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm">
+                    </h4> -->
+                <!-- </div> -->
+            <!-- </div> -->
+
+            <!-- <div class="row"> -->
+                <div class="col-sm-4">
                     <!--Open Existing User Modal for login-->
-                    <button type="button" class="btn btn-secondary" id="iExisting">Existing Owner</button>
+                    <button type="button" class="btn btn-secondary btn-lg btn-block" id="iExisting">Existing Owner</button>
                 </div>
-                <div class="col-sm">
-                    <h2>Existing Owners Login:</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm">
+                <!-- <div class="col-sm"> -->
+                    <!-- <h2>Existing Owners Login:</h2> -->
+                <!-- </div> -->
+            <!-- </div> -->
+
+            <!-- <div class="row"> -->
+                <div class="col-sm-4">
                     <!--Open Existing User Modal for login-->
-                    <button type="button" class="btn btn-outline-warning" id="iRules">Rules</button>
+                    <button type="button" class="btn btn-info btn-lg btn-block" id="iRules">Game Rules</button>
                 </div>
-                <div class="col-sm">
-                    <h3>Game Rules:</h3>
-                </div>
+                <!-- <div class="col-sm"> -->
+                    <!-- <h3>Game Rules:</h3> -->
+                <!-- </div> -->
             </div>
+
         </div>
     </div>
-    </div>
+<!-- </div> -->
 
     <!--Modal structure for the buttons-->
     <!--Signup Modal-->
     <div id="modal-custom-signup" class="modal-custom">
         <button data-iziModal-close class="icon-close">X</button>
         <header>
-            <label>Please Sign Up!</label>
+            <label id="modal-custom-signup">Please Sign Up!</label>
         </header>
         <div>
             <section>
@@ -95,7 +99,7 @@
     <div id="modal-custom-login" class="modal-custom">
         <button data-iziModal-close class="icon-close">X</button>
         <header>
-            <label>Please Login!</label>
+            <label id="modal-custom-login">Please Login!</label>
         </header>
         <div>
             <section>
@@ -116,7 +120,7 @@
     <div id="modal-custom-rules" class="modal-custom">
         <button data-iziModal-close class="icon-close">X</button>
         <header>
-            <label>Da'Rules</label>
+            <label id="header-custom-rules">Da'Rules</label>
         </header>
         <div>
             <section>
@@ -145,7 +149,7 @@
                     <li>Press &ldquo;Begin the BATTLE&rdquo;.</li>
                 </ul>
                 <footer>
-                    <button data-iziModal-close data-iziModal-transitionOut="bounceOutDown">Exit</button>
+                    <button data-iziModal-close data-iziModal-transitionOut="bounceOutDown" id="header-custom-rules">Exit</button>
                 </footer>
             </section>
         </div>
