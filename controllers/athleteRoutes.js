@@ -13,11 +13,11 @@ module.exports = function(app) {
       });
 
       // We have access to the athletes as an argument inside of the callback function
-      res.render('index', athletes);
+      res.json(athletes);
     });
   });
-                
-  // default athletes route is to render all in the database
+
+  // route to return all athletes owned by one owner
   app.get("/api/athletes/team/:OwnerId", function(req, res) {
     // findAll returns all entries for a table when used with no options
     db.Athlete.findAll({
@@ -83,7 +83,7 @@ module.exports = function(app) {
   // PUT route for updating athletess. We can access the updated athlete in req.body
   app.put("/api/athletes/active/:id", function(req, res) {
     // Update takes in an object describing the properties we want to update, and
-      // we use where to describe which objects we want to update
+    // we use where to describe which objects we want to update
     console.log(req.body);
     db.Athlete.update({
       // athleteName: req.body.athleteName,
@@ -101,7 +101,7 @@ module.exports = function(app) {
   // PUT route for updating athletess. We can access the updated athlete in req.body
   app.put("/api/athletes/injured/:id", function(req, res) {
     // Update takes in an object describing the properties we want to update, and
-      // we use where to describe which objects we want to update
+    // we use where to describe which objects we want to update
     console.log(req.body);
     db.Athlete.update({
       // athleteName: req.body.athleteName,
