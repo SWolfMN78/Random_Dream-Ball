@@ -114,7 +114,7 @@
 }
 
 p {
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .modal-custom {
@@ -234,3 +234,24 @@ p {
     font-family: 'Lato', arial;
     font-weight: 500;
 }
+
+/**************************/
+#modal-custom-rules{
+    color: white;
+    font-size: 15px;
+    background-image: url(../img/galaxy1.jpg);
+    background-size: 100% 100%;
+} 
+
+#header-custom-rules{
+    color: white;
+    background-color: black;
+}
+
+#modal-custom-signup, #modal-custom-login{
+    color: white;
+    background-image: url(../img/galaxy1.jpg);
+    background-size: 100% 100%;
+}
+
+
