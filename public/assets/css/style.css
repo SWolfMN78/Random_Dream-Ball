@@ -235,21 +235,22 @@ p {
     font-weight: 500;
 }
 
-/**************************/
-#modal-custom-rules{
-    color: white;
-    font-size: 15px;
-    background-image: url(../img/galaxy1.jpg);
-    background-size: 100% 100%;
-} 
+/********** modal style **************/
+
+#custom-btnColor1{
+   background-color: #0682fc; 
+}
 
 #header-custom-rules{
     color: white;
     background-color: black;
 }
 
-#modal-custom-signup, #modal-custom-login{
+#modal-custom-signup, 
+#modal-custom-login,
+#modal-custom-rules {
     color: white;
+    font-size: 15px;
     background-image: url(../img/galaxy1.jpg);
     background-size: 100% 100%;
 }
