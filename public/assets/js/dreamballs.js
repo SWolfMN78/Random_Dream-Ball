@@ -4,14 +4,15 @@ $(document).ready(function() {
 
   $(document).on("click", "button.delete", deleteDreamBall);
   $(document).on("click", "button.updateID", changeID);
+  $(document).on("click", "button.updateRosterID", changeRosterID);
 
   // Getting a reference to the input field where user adds a new Athlete
   var $newItemInput = $("input.new-item");
   // Our new Athletes will go inside the dreamballContainer
   var $dreamballContainer1 = $(".dreamball-container1");
   var $dreamballContainer2 = $(".dreamball-container2");
-  var $dreamballContainer3 = $(".dreamball-container3");
-  var $dreamballContainer4 = $(".dreamball-container4");
+  //var $dreamballContainer3 = $(".dreamball-container3");
+  //var $dreamballContainer4 = $(".dreamball-container4");
 
   // Our initial Athletes array
   var  athletes= [];
@@ -21,44 +22,55 @@ $(document).ready(function() {
 
   //Adding rows of Athletes
   function initializeRows() {
-    $dreamballContainer1.empty();
+    //$dreamballContainer1.empty();
     $dreamballContainer2.empty();
-    $dreamballContainer3.empty();
-    $dreamballContainer4.empty();
+    //$dreamballContainer3.empty();
+    //$dreamballContainer4.empty();
 
     var rowsToAdd1 = [];
     var rowsToAdd2 = [];
-    var rowsToAdd3 = [];
-    var rowsToAdd4 = [];
+    //var rowsToAdd3 = [];
+    //var rowsToAdd4 = [];
     for (var i = 0; i < athletes.length; i++) {
       //console.log("//////" + dreamballs[i].ownerID)
       switch (athletes[i].OwnerId){
-      case 1:
+      /*case 1:
       rowsToAdd1.push(createNewRow(athletes[i]));
-      break;
+      break;*/
       case 2:
       rowsToAdd2.push(createNewRow(athletes[i]));
       break;
-      case 3:
+      /*case 3:
       rowsToAdd3.push(createNewRow(athletes[i]));
       break;
       case 4:
       rowsToAdd4.push(createNewRow(athletes[i]));
-      break;
+      break;*/
       }
       
     }
-    $dreamballContainer1.prepend(rowsToAdd1);
+    //$dreamballContainer1.prepend(rowsToAdd1);
     $dreamballContainer2.prepend(rowsToAdd2);
-    $dreamballContainer3.prepend(rowsToAdd3);
-    $dreamballContainer4.prepend(rowsToAdd4);
+    //$dreamballContainer3.prepend(rowsToAdd3);
+    //$dreamballContainer4.prepend(rowsToAdd4);
   }
+
+  function initializeRosterRows() {
+    $dreamballContainer1.empty();
+    var rowsToAdd1 = [];
+    for (var i = 0; i < athletes.length; i++) {
+      rowsToAdd1.push(createRosterRow(athletes[i]));
+    }
+    $dreamballContainer1.prepend(rowsToAdd1);
+  }
+
 
   // This function gets Athletes from database 
   function getDreamBalls() {
     $.get("/api/athletes", function(data) {
       athletes = data;
       initializeRows();
+      initializeRosterRows();
     });
   }
 
@@ -93,6 +105,27 @@ $(document).ready(function() {
     return $newInputRow;
   }
 
+  function createRosterRow(athlete) {
+    var $newRosterRow = $(
+      [
+        "<li class='list-group-item dreamball-item'>",
+        "<span>",
+        athlete.athleteName,
+        "</span>",
+        "<input type='text' class='edit' style='display: none;'>",
+        "<button class='delete btn btn-default'>x</button>",
+        "<button class='updateRosterID btn btn-primary btn-default'<<<x</button>",
+        "</li>"
+      ].join("")
+    );
+
+    $newRosterRow.find("button.delete").data("id", athlete.id);
+    $newRosterRow.find("button.updateRosterID").data("athlete", athlete);
+    $newRosterRow.data("athlete", athlete);
+    
+    return $newRosterRow;
+  }
+
   
   function updateDreamBall(athlete) {
     $.ajax({
@@ -109,6 +142,16 @@ $(document).ready(function() {
     console.log("newOwnerID = " + newOwnerID)
     newDreamBall.OwnerId = newOwnerID;
     console.log("newOwnerID.OwnerId = " + newDreamBall.OwnerId);  
+    updateDreamBall(newDreamBall); 
+  }
+
+  function changeRosterID() {
+    var newDreamBall = $(this).data("athlete");
+    console.log(newDreamBall);
+    var newOwnerID = 2;
+    console.log("newOwnerID = " + newOwnerID)
+    newDreamBall.OwnerId = newOwnerID;
+    console.log("newOwnerID.ownerID = " + newDreamBall.OwnerId);  
     updateDreamBall(newDreamBall); 
   }
 
