@@ -76,18 +76,21 @@ module.exports = function(app) {
   });
 
   // PUT route for updating todos. We can access the updated todo in req.body
+  
+
+  // PUT route for updating todos. We can access the updated todo in req.body
   app.put("/api/athletes", function(req, res) {
     // Update takes in an object describing the properties we want to update, and
     // we use where to describe which objects we want to update
     db.Athlete.update({
-      athleteName: req.body.athleteName,
+      athleteName: req.body.charName,
       OwnerId: req.body.OwnerId
     }, {
       where: {
         id: req.body.id
       }
-    }).then(function(dbResult) {
-      res.json(dbResult);
+    }).then(function(dbDreamBall) {
+      res.json(dbDreamBall);
     });
   });
 

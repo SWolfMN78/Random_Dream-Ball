@@ -1,18 +1,18 @@
 
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
-$(document).ready(function() {
+$(document).ready(function() {  
 
   $(document).on("click", "button.delete", deleteDreamBall);
   $(document).on("click", "button.updateID", changeID);
   $(document).on("click", "button.updateRosterID", changeRosterID);
-
+  
   // Getting a reference to the input field where user adds a new Athlete
   var $newItemInput = $("input.new-item");
   // Our new Athletes will go inside the dreamballContainer
-  var $dreamballContainer1 = $(".dreamball-container1");
-  var $dreamballContainer2 = $(".dreamball-container2");
-  //var $dreamballContainer3 = $(".dreamball-container3");
-  //var $dreamballContainer4 = $(".dreamball-container4");
+  var $dreamballContainer1 = $(".athlete-container1");
+  var $dreamballContainer2 = $(".athlete-container2");
+  //var $dreamballContainer3 = $(".athlete-container3");
+  //var $dreamballContainer4 = $(".athlete-container4");
 
   // Our initial Athletes array
   var  athletes= [];
@@ -27,7 +27,7 @@ $(document).ready(function() {
     //$dreamballContainer3.empty();
     //$dreamballContainer4.empty();
 
-    var rowsToAdd1 = [];
+    //var rowsToAdd1 = [];
     var rowsToAdd2 = [];
     //var rowsToAdd3 = [];
     //var rowsToAdd4 = [];
@@ -59,7 +59,9 @@ $(document).ready(function() {
     $dreamballContainer1.empty();
     var rowsToAdd1 = [];
     for (var i = 0; i < athletes.length; i++) {
+      if (athletes[i].OwnerId ===1){
       rowsToAdd1.push(createRosterRow(athletes[i]));
+      }
     }
     $dreamballContainer1.prepend(rowsToAdd1);
   }
@@ -87,11 +89,10 @@ $(document).ready(function() {
   function createNewRow(athlete) {
     var $newInputRow = $(
       [
-        "<li class='list-group-item dreamball-item'>",
+        "<li class='list-group-item athlete-item'>",
         "<span>",
         athlete.athleteName,
         "</span>",
-        "<input type='text' class='edit' style='display: none;'>",
         "<button class='delete btn btn-default'>x</button>",
         "<button class='updateID btn btn-primary btn-default'>>>></button>",
         "</li>"
@@ -108,18 +109,18 @@ $(document).ready(function() {
   function createRosterRow(athlete) {
     var $newRosterRow = $(
       [
-        "<li class='list-group-item dreamball-item'>",
+        "<li class='list-group-item athlete-item'>",
         "<span>",
+        "<button class='updateRosterID btn btn-primary btn-default'><span><<<</span></button>",
         athlete.athleteName,
         "</span>",
-        "<input type='text' class='edit' style='display: none;'>",
         "<button class='delete btn btn-default'>x</button>",
-        "<button class='updateRosterID btn btn-primary btn-default'<<<x</button>",
         "</li>"
       ].join("")
     );
 
     $newRosterRow.find("button.delete").data("id", athlete.id);
+    //$newRosterRow.find("button.updateRosterID").data("athlete", athlete);
     $newRosterRow.find("button.updateRosterID").data("athlete", athlete);
     $newRosterRow.data("athlete", athlete);
     
@@ -151,7 +152,7 @@ $(document).ready(function() {
     var newOwnerID = 2;
     console.log("newOwnerID = " + newOwnerID)
     newDreamBall.OwnerId = newOwnerID;
-    console.log("newOwnerID.ownerID = " + newDreamBall.OwnerId);  
+    console.log("newOwnerID.OwnerId = " + newDreamBall.OwnerId);  
     updateDreamBall(newDreamBall); 
   }
 
@@ -162,7 +163,7 @@ $(document).ready(function() {
 
     var newDreamBall = {
       athleteName: $("#bu").val().trim(),
-      OwnerId: $("[name=ownerID]:checked").val().trim()
+      OwnerId: $("[name=OwnerId]:checked").val().trim()
     };
       
     //console.log("And the ownerID is = " + newDreamBall.ownerID);
@@ -204,7 +205,7 @@ $(document).ready(function() {
     );
   });
 
-  $(".delete-dreamball").on("click", function(event) {
+  $(".delete-athelete").on("click", function(event) {
     var id = $(this).data("id");
     console.log("deleted athletes");
     // Send the DELETE request.
