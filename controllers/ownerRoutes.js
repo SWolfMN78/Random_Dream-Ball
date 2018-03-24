@@ -11,7 +11,7 @@ module.exports = function(app) {
       });
 
       // We have access to the burgers as an argument inside of the callback function
-      res.render('index', { owners: owners });
+      res.json({ owners: owners });
     });
   });
 

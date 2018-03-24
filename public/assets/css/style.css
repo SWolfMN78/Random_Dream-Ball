@@ -256,7 +256,6 @@ p {
 
 .my-scroll{
     height: 300px;
-    width:250px;
+    width: 100%;
     overflow: scroll;
 }
-

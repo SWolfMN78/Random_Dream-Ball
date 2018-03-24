@@ -1,8 +1,7 @@
-
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
-$(document).ready(function() {  
+$(document).ready(function() {
 
-  $(document).on("click", "button.delete", deleteDreamBall);
+  $(document).on("click", "button.delete", deleteAthlete);
   $(document).on("click", "button.updateID", changeID);
   $(document).on("click", "button.updateRosterID", changeRosterID);
   
@@ -18,7 +17,7 @@ $(document).ready(function() {
   var  athletes= [];
 
   // Getting Athletes from database when page loads
-  getDreamBalls();  
+  getAthletes();
 
   //Adding rows of Athletes
   function initializeRows() {
@@ -47,7 +46,6 @@ $(document).ready(function() {
       rowsToAdd4.push(createNewRow(athletes[i]));
       break;*/
       }
-      
     }
     //$dreamballContainer1.prepend(rowsToAdd1);
     $dreamballContainer2.prepend(rowsToAdd2);
@@ -66,9 +64,8 @@ $(document).ready(function() {
     $dreamballContainer1.prepend(rowsToAdd1);
   }
 
-
-  // This function gets Athletes from database 
-  function getDreamBalls() {
+  // This function gets Athletes from database
+  function getAthletes() {
     $.get("/api/athletes", function(data) {
       athletes = data;
       initializeRows();
@@ -77,13 +74,13 @@ $(document).ready(function() {
   }
 
   // This function deletes an Athlete when the user clicks the delete button
-  function deleteDreamBall(event) {
+  function deleteAthlete(event) {
     event.stopPropagation();
     var id = $(this).data("id");
     $.ajax({
       method: "DELETE",
       url: "/api/athletes/" + id
-    }).then(getDreamBalls);
+    }).then(getAthletes);
   }
 
   function createNewRow(athlete) {
@@ -92,17 +89,15 @@ $(document).ready(function() {
         "<li class='list-group-item athlete-item'>",
         "<span>",
         athlete.athleteName,
-        //"<button class='delete btn btn-default'>x</button>",
         "<button class='updateID btn btn-primary btn-default'>>>></button>",
         "</span>",
         "</li>"
       ].join("")
     );
 
-    //$newInputRow.find("button.delete").data("id", athlete.id);
     $newInputRow.find("button.updateID").data("athlete", athlete);
     $newInputRow.data("athlete", athlete);
-    
+
     return $newInputRow;
   }
 
@@ -114,50 +109,48 @@ $(document).ready(function() {
         "<button class='updateRosterID btn btn-primary btn-default'><span><<<</span></button>",
         athlete.athleteName,
         "</span>",
-        //"<button class='delete btn btn-default'>x</button>",
         "</li>"
       ].join("")
     );
 
-    //$newRosterRow.find("button.delete").data("id", athlete.id);
     //$newRosterRow.find("button.updateRosterID").data("athlete", athlete);
     $newRosterRow.find("button.updateRosterID").data("athlete", athlete);
     $newRosterRow.data("athlete", athlete);
-    
+
     return $newRosterRow;
   }
 
-  
-  function updateDreamBall(athlete) {
+  function updateAthlete(athlete) {
     $.ajax({
       method: "PUT",
-      url: "/api/athletes",
+      url: "/api/athletes/owner/"+athlete.id,
       data: athlete
-    }).then(getDreamBalls);
+    }).then(getAthletes);
   }
 
   function changeID() {
-    var newDreamBall = $(this).data("athlete");
-    //console.log(newDreamBall);
+    var newAthlete = $(this).data("athlete");
+    //console.log(newAthlete);
     var newOwnerID = 1;
     //console.log("newOwnerID = " + newOwnerID)
-    newDreamBall.OwnerId = newOwnerID;
-    //console.log("newOwnerID.OwnerId = " + newDreamBall.OwnerId);  
-    updateDreamBall(newDreamBall); 
+    newAthlete.OwnerId = newOwnerID;
+    //console.log("newOwnerID.OwnerId = " + newAthlete.OwnerId);
+    updateAthlete(newAthlete);
   }
 
   function changeRosterID() {
-    var newDreamBall = $(this).data("athlete");
-    //console.log(newDreamBall);
+    var newAthlete = $(this).data("athlete");
+    //console.log(newAthlete);
     var newOwnerID = 2;
     //console.log("newOwnerID = " + newOwnerID)
-    newDreamBall.OwnerId = newOwnerID;
-    //console.log("newOwnerID.OwnerId = " + newDreamBall.OwnerId);  
-    updateDreamBall(newDreamBall); 
+    newAthlete.OwnerId = newOwnerID;
+    //console.log("newOwnerID.OwnerId = " + newAthlete.OwnerId);  
+    updateAthlete(newAthlete); 
   }
 
-
+  //
   //========THIS CODE IS FOR THE USER FORM ===============
+  //
 
   $(".create-userform").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
@@ -167,7 +160,6 @@ $(document).ready(function() {
       userName: $("#user").val().trim(),
       teamName: $("#tname").val().trim(),
       passWord: $("#pass").val().trim(),
-      
     };
 
     // Send the POST request.
@@ -198,4 +190,3 @@ $(document).ready(function() {
     );
   });
 });
-
