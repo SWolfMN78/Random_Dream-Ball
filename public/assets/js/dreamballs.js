@@ -32,7 +32,7 @@ $(document).ready(function() {
     //var rowsToAdd3 = [];
     //var rowsToAdd4 = [];
     for (var i = 0; i < athletes.length; i++) {
-      //console.log("//////" + dreamballs[i].ownerID)
+      //console.log("//////" + athletes[i].OwnerId)
       switch (athletes[i].OwnerId){
       /*case 1:
       rowsToAdd1.push(createNewRow(athletes[i]));
@@ -92,14 +92,14 @@ $(document).ready(function() {
         "<li class='list-group-item athlete-item'>",
         "<span>",
         athlete.athleteName,
-        "</span>",
-        "<button class='delete btn btn-default'>x</button>",
+        //"<button class='delete btn btn-default'>x</button>",
         "<button class='updateID btn btn-primary btn-default'>>>></button>",
+        "</span>",
         "</li>"
       ].join("")
     );
 
-    $newInputRow.find("button.delete").data("id", athlete.id);
+    //$newInputRow.find("button.delete").data("id", athlete.id);
     $newInputRow.find("button.updateID").data("athlete", athlete);
     $newInputRow.data("athlete", athlete);
     
@@ -114,12 +114,12 @@ $(document).ready(function() {
         "<button class='updateRosterID btn btn-primary btn-default'><span><<<</span></button>",
         athlete.athleteName,
         "</span>",
-        "<button class='delete btn btn-default'>x</button>",
+        //"<button class='delete btn btn-default'>x</button>",
         "</li>"
       ].join("")
     );
 
-    $newRosterRow.find("button.delete").data("id", athlete.id);
+    //$newRosterRow.find("button.delete").data("id", athlete.id);
     //$newRosterRow.find("button.updateRosterID").data("athlete", athlete);
     $newRosterRow.find("button.updateRosterID").data("athlete", athlete);
     $newRosterRow.data("athlete", athlete);
@@ -138,48 +138,26 @@ $(document).ready(function() {
 
   function changeID() {
     var newDreamBall = $(this).data("athlete");
-    console.log(newDreamBall);
+    //console.log(newDreamBall);
     var newOwnerID = 1;
-    console.log("newOwnerID = " + newOwnerID)
+    //console.log("newOwnerID = " + newOwnerID)
     newDreamBall.OwnerId = newOwnerID;
-    console.log("newOwnerID.OwnerId = " + newDreamBall.OwnerId);  
+    //console.log("newOwnerID.OwnerId = " + newDreamBall.OwnerId);  
     updateDreamBall(newDreamBall); 
   }
 
   function changeRosterID() {
     var newDreamBall = $(this).data("athlete");
-    console.log(newDreamBall);
+    //console.log(newDreamBall);
     var newOwnerID = 2;
-    console.log("newOwnerID = " + newOwnerID)
+    //console.log("newOwnerID = " + newOwnerID)
     newDreamBall.OwnerId = newOwnerID;
-    console.log("newOwnerID.OwnerId = " + newDreamBall.OwnerId);  
+    //console.log("newOwnerID.OwnerId = " + newDreamBall.OwnerId);  
     updateDreamBall(newDreamBall); 
   }
 
 
-  $(".create-form").on("submit", function(event) {
-    // Make sure to preventDefault on a submit event.
-    event.preventDefault();
-
-    var newDreamBall = {
-      athleteName: $("#bu").val().trim(),
-      OwnerId: $("[name=OwnerId]:checked").val().trim()
-    };
-      
-    //console.log("And the ownerID is = " + newDreamBall.ownerID);
-
-    // Send the POST request.
-    $.ajax("/api/athletes", {
-      type: "POST",
-      data: newDreamBall
-    }).then(
-      function() {
-        console.log("created new athlete");
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
-  });
+  //========THIS CODE IS FOR THE USER FORM ===============
 
   $(".create-userform").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
