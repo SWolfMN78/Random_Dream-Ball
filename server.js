@@ -1,4 +1,3 @@
-
 // ******************************************************************************
 // *** Dependencies
 // =============================================================
@@ -25,8 +24,7 @@ app.use(express.static("public"));
 
 // Routes
 // =============================================================
-//require("./controllers/htmlRoutes.js")(app);
-require("./controllers/dreamballsController.js")(app);
+require("./controllers/htmlRoutes.js")(app);
 require("./controllers/athleteRoutes.js")(app);
 require("./controllers/ownerRoutes.js")(app);
 
@@ -37,4 +35,3 @@ db.sequelize.sync().then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
-
