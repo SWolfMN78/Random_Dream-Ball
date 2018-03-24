@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 
@@ -26,7 +28,7 @@
     <div class="container">
         <!--Point of info will be Team name / Team Icon /  -->
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <section>
                     <div class="row">
                         <legend>Team Info Section</legend>
@@ -79,54 +81,49 @@
                 </section>
             </div>
             <!--Moved the infomration from a table to a a-href list grouping.  Additional list shoudl be dynamically created based on need.-->
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <section> Roster Info
                     <div class="row">
-                        <div class="col-md-5">
-                            <form action="#">
-                                <div class="form-group" class="list-group">
-                                    <select multiple="" class="form-control" id="exampleSelect2">
-                                            <option><a href="#" class="list-group-item list-group-item-action">The Dark Eagle</a></option>
-                                            <option><a href="#" d="plg00" class="list-group-item list-group-item-action">The Old Axeman</a></option>
-                                            <option><a href="#" id="plg00" class="list-group-item list-group-item-action">Shadow</a></option>
-                                        </select>
-                                </div>
+                        <div class="col-md-6">
+
+<!--===================================================================================================-->
+
+                            <ul class="my-scroll list-group athlete-list">
+                                <span class="athlete-container2">
+                                </span>
+                            </ul>
+
+                            
+                        </div>
+                        
+                        <!--Moved the infomration from a table to a a-href list grouping.  Additional list shoudl be dynamically created based on need.-->
+                        <div class="col-md-6">
+<!--=======================================================================-->
+
+                            <ul class=" my-scroll list-group athlete-list">
+                                <span class="athlete-container1">
+                                </span>
+                            </ul> 
+
+                                
                             </form>
                         </div>
-                        <div class="col-md-2">
-                            <div class="row">
-                                <div>
-                                    <!-- Button - add selection to the player roster -->
-                                    <button type="button" class="btn btn-secondary"><</button>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                        </div>
+
+                        <div class="col-md-4">
+                            
                             <div class="row">
                                 <div>
                                     <!--button - clear all information from player's list-->
                                     <button type="button" class="btn btn-outline-warning">X</button>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div>
-                                    <!--button - move selected out of player's list-->
-                                    <button type="button" class="btn btn-warning">></button>
-                                </div>
-                            </div>
+                            
                         </div>
-                        <!--Moved the infomration from a table to a a-href list grouping.  Additional list shoudl be dynamically created based on need.-->
-                        <div class="col-md-5">
-                            <form action="#">
-                                <div class="form-group" class="list-group">
-                                    <select multiple="" class="form-control" id="exampleSelect2">
-                                            <option><a href="#" class="list-group-item list-group-item-action">Broken Wolf</a></option>
-                                            <option><a href="#" class="list-group-item list-group-item-action">The Brass Wasp</a></option>
-                                            <option><a href="#" class="list-group-item list-group-item-action">The Ice Bear</a></option>
-                                            <option><a href="#" class="list-group-item list-group-item-action">Good Killer </a></option>
-                                            <option><a href="#" class="list-group-item list-group-item-action">The Mammoth Bear</a></option>
-                                            <option><a href="#" class="list-group-item list-group-item-action">Scarlet King</a></option>
-                                        </select>
-                                </div>
-                            </form>
+                        <div class="col-md-4">
                         </div>
                     </div>
                 </section>
@@ -175,7 +172,7 @@
     </div>
 
     <!-- Additional javascript files-->
-    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="./assets/js/dreamballs.js"></script>
     <!-- local CSS stylesheet-->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <!-- Modal required scripting info-->
