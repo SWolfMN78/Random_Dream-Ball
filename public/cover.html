@@ -87,15 +87,15 @@
         <div>
             <section>
                 <!--Get the user's Password Info-->
-                <input type="text" placeholder="Username">
+                <input type="text" placeholder="Username" id="create_name">
                 <!--Get the user's selected password-->
-                <input type="password" placeholder="Password - limit 10 characters">
+                <input type="password" placeholder="Password - limit 10 characters" id="create_pass">
                 <!--Have the user confirm their password-->
-                <input type="password" placeholder="Retype Password - limit 10 characters">
+                <input type="password" placeholder="Retype Password - limit 10 characters" id="create_verify">
                 <label for="check"><input type="checkbox" name="checkbox" id="check" value="1"> I agree to the <u>Terms</u> of this game.</label>
                 <footer>
                     <button data-iziModal-close>Cancel</button>
-                    <button class="submit">Log in</button>
+                    <button class="submit" id="b_create">Create Account</button>
                 </footer>
             </section>
         </div>
@@ -110,13 +110,13 @@
         <div>
             <section>
                 <!--Get the user's Name Info-->
-                <input type="text" placeholder="Username" id="">
+                <input type="text" placeholder="Username" id="login_name">
                 <!--Get the user's Password Info-->
-                <input type="password" placeholder="Password" id="">
+                <input type="password" placeholder="Password" id="login_pass">
                 <!--Get the user's agreement to game terms and conditions Info-->
                 <footer>
                     <button data-iziModal-close data-iziModal-transitionOut="bounceOutDown">Cancel</button>
-                    <button class="submit">Create Account</button>
+                    <button class="submit" id="b_login">Log in</button>
                 </footer>
             </section>
         </div>

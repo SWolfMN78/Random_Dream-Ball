@@ -23,10 +23,12 @@ module.exports = function(sequelize, DataTypes) {
     },
     teamName: {
       type: DataTypes.STRING,
+      defaultValue: ""
       //allowNull: false
     },
     teamSlogan: {
       type: DataTypes.STRING,
+      defaultValue: ""
       //allowNull: false
     },
     teamFunds: {
