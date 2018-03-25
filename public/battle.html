@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DB Battle!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Google Fonts **Amaranth**-->
+    <link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
+    <!--Bootswatch Theme -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-bsvEK+YNVfNd1Ld4bz9xMEEWEDQDZMLT37OAK45h+mmV4t5nT9ZFs4lPonkivNY7" crossorigin="anonymous" />
+    <!-- Link to my jQuery information -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--Bootstrap JS file -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!--Izimodal modal library-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css" integrity="sha384-twsqDCMYZktKK4KMv8cXDnLhBCVchPMuxLKKh1azoa3vn5nKRF/8PK4GmIgD0JaW" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js" integrity="sha384-OCBM5wbr9X4XRMO0UcgNtJrfDZz4bo4c6PDZrxVN8zLSn6/B0CKZ/RUBRDDVqgt4" crossorigin="anonymous" type="text/javascript"></script>
+    <!-- responsive meta tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+
+<body class="background">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-md-4">
+                <div class="col-sm-12 col-md-12">
+                    <div class="teamName">
+                        <h2>Owner's Team</h2>
+                    </div>
+                    <div class="playerBtn">
+                        <div class="btn-group-vertical" data-toggle="buttons">
+                            <button type="button" class="btn btn-primary btn-lg btn-block">Athelet1</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block">Athelet2</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block">Athelet3</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block">Athelet4</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block">Athelet5</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block">Athelet6</button>
+                        </div>
+                    </div>
+                    <div>
+                        Score sction
+                        <div class="form-group">
+                            <label class="col-form-label col-form-label-lg disabledInput" for="inputLarge">Large input</label>
+                            <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" id="inputLarge">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center col-sm-4 col-md-4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 m-5">
+                        <!--Image will go here for what happens via win or lose-->
+                        <img style="height: 200px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                            alt="Card image">
+                        <div class="card-body textResultDisplay">
+                            <h4 class="card-text center-align">Results will be displayed here ID- You won!!</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 text-center">
+                        <div class="teamName">
+                            <h2>Combatant Team</h2>
+                        </div>
+                        <div class="playerBtn">
+                            <div class="btn-group-vertical" data-toggle="buttons">
+                                <button type="button" class="btn btn-primary btn-lg btn-block disabled ">Athelet1</button>
+                                <button type="button" class="btn btn-primary btn-lg btn-block disabled">Athelet2</button>
+                                <button type="button" class="btn btn-primary btn-lg btn-block disabled">Athelet3</button>
+                                <button type="button" class="btn btn-primary btn-lg btn-block disabled">Athelet4</button>
+                                <button type="button" class="btn btn-primary btn-lg btn-block disabled">Athelet5</button>
+                                <button type="button" class="btn btn-primary btn-lg btn-block disabled">Athelet6</button>
+                            </div>
+                        </div>
+                        <div>
+                            Score sction
+                            <div class="form-group">
+                                <label class="col-form-label col-form-label-lg disabledInput" for="inputLarge">Large input</label>
+                                <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" id="inputLarge">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="card-footer text-center" id="footer">
+        <p>Three Corners &#x0026; One Center Group Project for University of Minnesota coding bootcamp. © 2018 Random Dream-Ball. All rights reserved.</p>
+    </div>
+
+    <!-- Additional javascript files-->
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <!-- local CSS stylesheet-->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <!-- Modal required scripting info-->
+</body>
+
+</html>
