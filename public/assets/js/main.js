@@ -53,8 +53,10 @@ $(document).ready(function() {
     });
 });
 
-//Set up New Account Information
-$()
+//If the user gets a valid login response then move to the next page - this code is still in test and may need mySQL confirmation.
+function WelcomeIn({
+
+});
 
 //Below is the modal information that has been cleaned up.
 $("#modal-custom-signup").iziModal({
@@ -142,7 +144,8 @@ $("#modal-custom-signup").on('click', 'button.submit', function() {
                         // one thing we need to do is have the OwnerId available to the app
                         // so, for now, store the username in localStorage
                         localStorage.setItem("username", newOwner.userName);
-
+                        //Shift the screen to the next page at this point.
+                        window.location.replace("teamEdit.html");
                         // now dismiss the modal and switch to teamEdit
                         // TODO
                     }
@@ -176,6 +179,9 @@ $("#modal-custom-login").on('click', 'button.submit', function() {
 
                 // now dismiss the modal and switch to teamEdit
                 // TODO
+                //Shift the screen to the next page at this point.
+                window.location.replace("teamEdit.html");
+                // Note *** The following will need to be valdated that it loads that owners info.
             } else {
                 // TODO popup/alert to choose new username
                 iziToast.warning({
