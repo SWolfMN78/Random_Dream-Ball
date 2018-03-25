@@ -104,3 +104,38 @@ $("#modal-custom-signup").on('click', 'button.submit', function()
     }
   );
 });
+
+$("#modal-custom-login").on('click', 'button.submit', function()
+{
+  console.log("in #modal-custom-signup on-click");
+  var loginOwner = {};
+  // verify passwords match
+  if ($('#login_pass').val().trim())
+  {
+    loginOwner = {
+      userName: $('#login_name').val().trim(),
+      passWord: $('#login_pass').val().trim()
+    }
+  }
+  // first, check if username exists
+  $.ajax("/api/owners/login/"+loginOwner.userName, {
+    type: "GET",
+    data: loginOwner
+  }).then(
+    function(owner) {
+      console.log("owner:", owner);
+      if (owner) {
+        // one thing we need to do is have the OwnerId available to the app
+        // so, for now, store the username in localStorage
+        localStorage.setItem("username", loginOwner.userName);
+
+        // now dismiss the modal and switch to teamEdit
+        // TODO
+      } else {
+        // TODO popup/alert to choose new username
+        alert("Username already exists, please choose a new one!");
+        return false;
+      }
+    }
+  );
+});
