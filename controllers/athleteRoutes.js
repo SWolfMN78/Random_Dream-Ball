@@ -21,7 +21,7 @@ module.exports = function(app) {
   app.get("/api/athletes/team/:OwnerId", function(req, res) {
     // findAll returns all entries for a table when used with no options
     db.Athlete.findAll({
-      attributes: ['id', 'athleteName', 'homePlanet', 'powerPoints', 'isActive', 'athleteInjured', 'OwnerId'],
+      attributes: ['id', 'athleteName', 'homePlanet', 'powerPoints', 'athleteCost', 'isActive', 'athleteInjured', 'OwnerId'],
       where: {
         OwnerId: req.params.OwnerId
       },

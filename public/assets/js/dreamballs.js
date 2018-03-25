@@ -114,12 +114,30 @@ $(document).ready(function() {
     }).then(getAthletes);
   }
 
+  function translateSkillIcon(skillName) {
+    skillIcon = "";
+    switch (skillName) {
+      case "Bruiser":
+        // include the ' | ' in the icon to simplify the code later
+        skillIcon = ' | <i class="fab fa-grunt"></i>';
+        break;
+      case "Blocker":
+        skillIcon = ' | <i class="fas fa-shield-alt"></i>';
+        break;
+    }
+    return skillIcon;
+  }
+
   function createNewRow(athlete) {
+    var skillIcon = translateSkillIcon(athlete.SpecialSkill.skillName);
     var $newInputRow = $(
       [
         "<li class='list-group-item athlete-item updateID' id=athlete_"+athlete.id+">",
         "<p>",
-        athlete.athleteName+' | Pow:'+athlete.powerPoints+' | '+athlete.SpecialSkill.skillName,
+        athlete.athleteName,
+        ' | <i class="fas fa-bolt"></i>:'+athlete.powerPoints,
+        skillIcon,
+        ' | <i class="fas fa-dollar-sign"></i>:'+athlete.athleteCost,
         "</p>",
         "</li>"
       ].join("")
@@ -132,11 +150,15 @@ $(document).ready(function() {
   }
 
   function createRosterRow(athlete) {
+    var skillIcon = translateSkillIcon(athlete.SpecialSkill.skillName);
     var $newRosterRow = $(
       [
         "<li class='list-group-item athlete-item updateRosterID' id=athlete_"+athlete.id+">",
         "<p>",
-        athlete.athleteName+' | Pow:'+athlete.powerPoints+' | '+athlete.SpecialSkill.skillName,
+        athlete.athleteName,
+        ' | <i class="fas fa-bolt"></i>:'+athlete.powerPoints,
+        skillIcon,
+        ' | <i class="fas fa-dollar-sign"></i>:'+athlete.athleteCost,
         "</p>",
         "</li>"
       ].join("")
