@@ -33,7 +33,11 @@ module.exports = function(app) {
       include: [{
         model: db.SpecialSkill,
         attributes: ['skillName']
-      }]
+      }],
+      order: [
+        // order the result by cost
+        ['athleteCost', 'DESC']
+      ]
     }).then(function(dbResult) {
       // console.log('find team result:', dbResult);
       var athletes = [];

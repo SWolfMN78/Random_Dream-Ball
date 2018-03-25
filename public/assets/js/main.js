@@ -1,3 +1,8 @@
+if (typeof localStorage === "undefined" || localStorage === null) {
+  var LocalStorage = require('node-localstorage').LocalStorage;
+  localStorage = new LocalStorage('./scratch');
+}
+
 //test code to plug up the modals
 $(document).ready(function() {
 

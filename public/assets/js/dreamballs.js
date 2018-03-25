@@ -1,7 +1,30 @@
+if (typeof localStorage === "undefined" || localStorage === null) {
+  var LocalStorage = require('node-localstorage').LocalStorage;
+  localStorage = new LocalStorage('./scratch');
+}
+var username = localStorage.getItem("username");
+var OwnerId = 0;
+
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(document).ready(function() {
 
-  $(document).on("click", "button.delete", deleteAthlete);
+  // fetch the logged in user
+  $.get("/api/owners/login/"+username, function(data) {
+    // ? TODO ? maybe check localStorage for OwnerId first
+    //   - depends on how we handle the cover.html page
+    //   - maybe need a scheme for clearing OwnerId on 'initial' load???
+    if (data) {
+      console.log("login result:", data);
+      OwnerId = data.id;
+    } else {
+      // TODO better alert
+      // alert user to login
+      alert("Please login to be able to manage your team!");
+      return false;
+    }
+    console.log("after login, OwnerId:", OwnerId);
+  });
+
   $(document).on("click", "button.updateID", changeID);
   $(document).on("click", "button.updateRosterID", changeRosterID);
   
@@ -13,14 +36,11 @@ $(document).ready(function() {
   //var $dreamballContainer3 = $(".athlete-container3");
   //var $dreamballContainer4 = $(".athlete-container4");
 
-  // Our initial Athletes array
-  var  athletes= [];
-
   // Getting Athletes from database when page loads
   getAthletes();
 
   //Adding rows of Athletes
-  function initializeRows() {
+  function initializeRows(athletes) {
     //$dreamballContainer1.empty();
     $dreamballContainer2.empty();
     //$dreamballContainer3.empty();
@@ -31,21 +51,22 @@ $(document).ready(function() {
     //var rowsToAdd3 = [];
     //var rowsToAdd4 = [];
     for (var i = 0; i < athletes.length; i++) {
-      //console.log("//////" + athletes[i].OwnerId)
-      switch (athletes[i].OwnerId){
-      /*case 1:
-      rowsToAdd1.push(createNewRow(athletes[i]));
-      break;*/
-      case 2:
       rowsToAdd2.push(createNewRow(athletes[i]));
-      break;
-      /*case 3:
-      rowsToAdd3.push(createNewRow(athletes[i]));
-      break;
-      case 4:
-      rowsToAdd4.push(createNewRow(athletes[i]));
-      break;*/
-      }
+      // //console.log("//////" + athletes[i].OwnerId)
+      // switch (athletes[i].OwnerId){
+      // /*case 1:
+      // rowsToAdd1.push(createNewRow(athletes[i]));
+      // break;*/
+      // case 2:
+      // rowsToAdd2.push(createNewRow(athletes[i]));
+      // break;
+      // /*case 3:
+      // rowsToAdd3.push(createNewRow(athletes[i]));
+      // break;
+      // case 4:
+      // rowsToAdd4.push(createNewRow(athletes[i]));
+      // break;*/
+      // }
     }
     //$dreamballContainer1.prepend(rowsToAdd1);
     $dreamballContainer2.prepend(rowsToAdd2);
@@ -53,23 +74,33 @@ $(document).ready(function() {
     //$dreamballContainer4.prepend(rowsToAdd4);
   }
 
-  function initializeRosterRows() {
+  function initializeRosterRows(athletes) {
     $dreamballContainer1.empty();
     var rowsToAdd1 = [];
     for (var i = 0; i < athletes.length; i++) {
-      if (athletes[i].OwnerId ===1){
+      // if (athletes[i].OwnerId ===1){
       rowsToAdd1.push(createRosterRow(athletes[i]));
-      }
+      // }
     }
     $dreamballContainer1.prepend(rowsToAdd1);
   }
 
   // This function gets Athletes from database
   function getAthletes() {
-    $.get("/api/athletes", function(data) {
-      athletes = data;
-      initializeRows();
-      initializeRosterRows();
+    // $.get("/api/athletes", function(data) {
+    //   athletes = data;
+    //   initializeRows();
+    //   initializeRosterRows();
+    // });
+
+    // get athletes owned by logged in user
+    console.log("In getAthletes, OwnerId:", OwnerId);
+    $.get("/api/athletes/team/"+OwnerId, function(data) {
+      initializeRows(data);
+    });
+    // get unowned athletes
+    $.get("/api/athletes/team/1", function(data) {
+      initializeRosterRows(data);
     });
   }
 
@@ -131,9 +162,7 @@ $(document).ready(function() {
   function changeID() {
     var newAthlete = $(this).data("athlete");
     //console.log(newAthlete);
-    var newOwnerID = 1;
-    //console.log("newOwnerID = " + newOwnerID)
-    newAthlete.OwnerId = newOwnerID;
+    newAthlete.OwnerId = 1;
     //console.log("newOwnerID.OwnerId = " + newAthlete.OwnerId);
     updateAthlete(newAthlete);
   }
@@ -141,9 +170,7 @@ $(document).ready(function() {
   function changeRosterID() {
     var newAthlete = $(this).data("athlete");
     //console.log(newAthlete);
-    var newOwnerID = 2;
-    //console.log("newOwnerID = " + newOwnerID)
-    newAthlete.OwnerId = newOwnerID;
+    newAthlete.OwnerId = OwnerId;
     //console.log("newOwnerID.OwnerId = " + newAthlete.OwnerId);  
     updateAthlete(newAthlete); 
   }
