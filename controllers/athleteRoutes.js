@@ -43,7 +43,8 @@ module.exports = function(app) {
       });
 
       // We have access to the athletes as an argument inside of the callback function
-      res.json({ athletes: athletes });
+      // res.json({ athletes: athletes });
+      res.json( athletes );
     });
   });
 

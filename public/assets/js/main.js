@@ -67,14 +67,35 @@ $("#modal-custom-signup").on('click', 'button.submit', function()
       passWord: $('#create_pass').val().trim()
     }
   }
-  $.ajax("/api/owners/new", {
-    type: "POST",
+  // first, check if username exists
+  $.ajax("/api/owners/"+newOwner.userName, {
+    type: "GET",
     data: newOwner
   }).then(
-    function() {
-      console.log("created new UserID");
-      // Reload the page to get the updated list
-      //location.reload();
+    function(owner) {
+      console.log("owner:", owner);
+      if (owner) {
+        // popup/alert to choose new username
+        alert("Username already exists, please choose a new one!");
+        return false;
+      } else {
+        // if not already existing, then create it
+        $.ajax("/api/owners/new", {
+          type: "POST",
+          data: newOwner
+        }).then(
+          function() {
+            console.log("created new User");
+
+            // one thing we need to do is have the OwnerId available to the app
+            // so, for now, store the username in localStorage
+            localStorage.setItem("username", newOwner.userName);
+
+            // now dismiss the modal and switch to teamEdit
+            // TODO
+          }
+        );
+      }
     }
   );
 });
