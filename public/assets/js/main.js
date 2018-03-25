@@ -37,7 +37,7 @@ $("#modal-custom-login").iziModal({
 $("#modal-custom-rules").iziModal({
   history: false,
   overlayClose: false,
-  width: 600,
+  width: 1200,
   overlayColor: 'rgba(0, 0, 0, 0.6)',
   transitionIn: 'bounceInDown',
   transitionOut: 'bounceOutDown',
