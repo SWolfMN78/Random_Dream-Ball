@@ -8,6 +8,17 @@ var OwnerId = 0;
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(document).ready(function() {
 
+  $(document).on("click", "button.updateID", changeID);
+  $(document).on("click", "button.updateRosterID", changeRosterID);
+
+  // Getting a reference to the input field where user adds a new Athlete
+  var $newItemInput = $("input.new-item");
+  // Our new Athletes will go inside the dreamballContainer
+  var $dreamballContainer1 = $(".athlete-container1");
+  var $dreamballContainer2 = $(".athlete-container2");
+  //var $dreamballContainer3 = $(".athlete-container3");
+  //var $dreamballContainer4 = $(".athlete-container4");
+
   // fetch the logged in user
   $.get("/api/owners/login/"+username, function(data) {
     // ? TODO ? maybe check localStorage for OwnerId first
@@ -23,21 +34,10 @@ $(document).ready(function() {
       return false;
     }
     console.log("after login, OwnerId:", OwnerId);
+
+    // Getting Athletes from database when page loads
+    getAthletes();
   });
-
-  $(document).on("click", "button.updateID", changeID);
-  $(document).on("click", "button.updateRosterID", changeRosterID);
-  
-  // Getting a reference to the input field where user adds a new Athlete
-  var $newItemInput = $("input.new-item");
-  // Our new Athletes will go inside the dreamballContainer
-  var $dreamballContainer1 = $(".athlete-container1");
-  var $dreamballContainer2 = $(".athlete-container2");
-  //var $dreamballContainer3 = $(".athlete-container3");
-  //var $dreamballContainer4 = $(".athlete-container4");
-
-  // Getting Athletes from database when page loads
-  getAthletes();
 
   //Adding rows of Athletes
   function initializeRows(athletes) {
