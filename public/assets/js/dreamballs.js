@@ -8,8 +8,8 @@ var OwnerId = 0;
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(document).ready(function() {
 
-  $(document).on("click", "button.updateID", changeID);
-  $(document).on("click", "button.updateRosterID", changeRosterID);
+  $(document).on("click", "li.updateID", changeID);
+  $(document).on("click", "li.updateRosterID", changeRosterID);
 
   // Getting a reference to the input field where user adds a new Athlete
   var $newItemInput = $("input.new-item");
@@ -117,11 +117,10 @@ $(document).ready(function() {
   function createNewRow(athlete) {
     var $newInputRow = $(
       [
-        "<li class='list-group-item athlete-item'>",
-        "<span>",
-        athlete.athleteName,
-        "<button class='updateID btn btn-primary btn-default'>>>></button>",
-        "</span>",
+        "<li class='list-group-item athlete-item updateID' id=athlete_"+athlete.id+">",
+        "<p>",
+        athlete.athleteName+' | Pow:'+athlete.powerPoints+' | '+athlete.SpecialSkill.skillName,
+        "</p>",
         "</li>"
       ].join("")
     );
@@ -135,11 +134,10 @@ $(document).ready(function() {
   function createRosterRow(athlete) {
     var $newRosterRow = $(
       [
-        "<li class='list-group-item athlete-item'>",
-        "<span>",
-        "<button class='updateRosterID btn btn-primary btn-default'><span><<<</span></button>",
-        athlete.athleteName,
-        "</span>",
+        "<li class='list-group-item athlete-item updateRosterID' id=athlete_"+athlete.id+">",
+        "<p>",
+        athlete.athleteName+' | Pow:'+athlete.powerPoints+' | '+athlete.SpecialSkill.skillName,
+        "</p>",
         "</li>"
       ].join("")
     );
