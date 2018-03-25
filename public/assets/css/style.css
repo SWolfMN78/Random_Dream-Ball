@@ -38,8 +38,12 @@
 .background {
     background-image: url(../img/ball1.png);
     background-size: cover;
-    /*background-repeat: no-repeat;*/
-    /*background-size: 100% 100%;*/
+    background-image: no-repeat;
+}
+
+.background2{
+    background-image: url(../img/page2arena.jpg);
+    background-size: cover;
     background-image: no-repeat;
 }
 
@@ -96,7 +100,7 @@
 }
 
 p {
-    font-size: 15px;
+    font-size: 18px;
 }
 
 .modal-custom {
@@ -233,7 +237,7 @@ p {
 #modal-custom-login,
 #modal-custom-rules {
     color: white;
-    font-size: 15px;
+    font-size: 18px;
     background-image: url(../img/galaxy1.jpg);
     background-size: 100% 100%;
 }
@@ -244,32 +248,13 @@ p {
 h1,
 strong {
     font-size: 70px;
+    text-shadow: 2px 2px #0330e1;
     color: white;
 }
 
-#iNewAccount {
-    background-image: url(../img/sirensBall.jpg);
-    background-size: 100% 100%;
-    width: 300px;
-    height: 300px;
-    font-size: 30px;
-    color: white;
-}
-
-#iExisting {
-    background-image: url(sportImage.jpg);
-    background-size: 100% 100%;
-    width: 300px;
-    height: 300px;
-    font-size: 30px;
-    color: white;
-}
-
-#iRules {
-    background-image: url(cheerleadersFans.jpg);
-    background-size: 100% 100%;
-    width: 300px;
-    height: 300px;
+#iNewAccount,
+#iExisting,
+#iRules{
     font-size: 30px;
     color: white;
 }

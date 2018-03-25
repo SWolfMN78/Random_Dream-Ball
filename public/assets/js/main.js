@@ -82,14 +82,14 @@ $("#modal-custom-login").iziModal({
 });
 
 $("#modal-custom-rules").iziModal({
-    history: false,
-    overlayClose: false,
-    width: 600,
-    overlayColor: 'rgba(0, 0, 0, 0.6)',
-    transitionIn: 'bounceInDown',
-    transitionOut: 'bounceOutDown',
-    navigateCaption: true,
-    navigateArrows: "false",
+  history: false,
+  overlayClose: false,
+  width: 1200,
+  overlayColor: 'rgba(0, 0, 0, 0.6)',
+  transitionIn: 'bounceInDown',
+  transitionOut: 'bounceOutDown',
+  navigateCaption: true,
+  navigateArrows: "false",
 });
 
 $(document).on('click', '#iNewAccount', function(event) {
