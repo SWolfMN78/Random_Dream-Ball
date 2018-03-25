@@ -68,34 +68,6 @@
 }
 
 
-/* .jumbotron {
-    background-image: url(../img/dreamballBK1.jpg);
-    margin-top: 10px;
-    padding-top: 10%;
-    padding-bottom: 10%;
-    font-family: 'Amaranth';
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
-} */
-
-
-/* .gameTitle {
-    font-family: "Times New Roman", Times, serif;
-    color: rgb(255, 255, 255);
-    font-size: 80px;
-    font-family: 'Amaranth';
-}
-
-.gameSubTitle {
-    color: rgb(255, 255, 255);
-    font-weight: 900;
-    font-size: 50px;
-    font-family: 'Amaranth';
-    font-style: italic;
-} */
-
-
 /*Team Editor Page CSS*/
 
 .list-group {
@@ -104,6 +76,14 @@
 
 .mySQLBtns {
     float: left;
+}
+
+
+/*Battle Page CSS*/
+
+.btn-group-vertical {
+    display: block;
+    min-width: 100%;
 }
 
 
@@ -237,18 +217,19 @@ p {
     font-weight: 500;
 }
 
+
 /********** modal style **************/
 
-#custom-btnColor1{
-   background-color: #0682fc; 
+#custom-btnColor1 {
+    background-color: #0682fc;
 }
 
-#header-custom-rules{
+#header-custom-rules {
     color: white;
     background-color: black;
 }
 
-#modal-custom-signup, 
+#modal-custom-signup,
 #modal-custom-login,
 #modal-custom-rules {
     color: white;
@@ -257,45 +238,44 @@ p {
     background-size: 100% 100%;
 }
 
+
 /***** button pics *****/
 
-h1, strong{
+h1,
+strong {
     font-size: 70px;
     color: white;
 }
 
-#iNewAccount{
-    background-image:url(../img/sirensBall.jpg);
+#iNewAccount {
+    background-image: url(../img/sirensBall.jpg);
     background-size: 100% 100%;
-    width:300px;
-    height:300px;
+    width: 300px;
+    height: 300px;
     font-size: 30px;
     color: white;
 }
 
-#iExisting{
-    background-image:url(sportImage.jpg);
+#iExisting {
+    background-image: url(sportImage.jpg);
     background-size: 100% 100%;
-    width:300px;
-    height:300px;
+    width: 300px;
+    height: 300px;
     font-size: 30px;
     color: white;
 }
 
-
-#iRules{
-    background-image:url(cheerleadersFans.jpg);
+#iRules {
+    background-image: url(cheerleadersFans.jpg);
     background-size: 100% 100%;
-    width:300px;
-    height:300px;
+    width: 300px;
+    height: 300px;
     font-size: 30px;
     color: white;
 }
 
-
-.my-scroll{
+.my-scroll {
     height: 300px;
     width: 100%;
     overflow: scroll;
 }
-
