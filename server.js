@@ -1,4 +1,3 @@
-
 // ******************************************************************************
 // *** Dependencies
 // =============================================================
@@ -16,7 +15,7 @@ var db = require("./models");
 // Sets up the Express app to handle data parsing
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 // parse application/json
 app.use(bodyParser.json());
 
@@ -25,8 +24,10 @@ app.use(express.static("public"));
 
 // Routes
 // =============================================================
-require("./controllers/dreamballsController.js")(app);
-//require("./controllers/ownerRoutes.js")(app);
+require("./controllers/htmlRoutes.js")(app);
+require("./controllers/athleteRoutes.js")(app);
+require("./controllers/ownerRoutes.js")(app);
+
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync().then(function() {
@@ -34,4 +35,3 @@ db.sequelize.sync().then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
-

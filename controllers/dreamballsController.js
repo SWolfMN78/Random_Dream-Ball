@@ -1,4 +1,3 @@
-// *********************************************************************************
 // api-routes.js - this file offers a set of routes for displaying and saving data to the db
 // *********************************************************************************
 var db = require("../models");
@@ -9,13 +8,14 @@ var db = require("../models");
 
 // grab the orm from the config
 // (remember: connection.js -> orm.js -> route file)
-//var orm = require("../config/orm.js");
+//va// *********************************************************************************
+
 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
-  app.get("/", function(req, res) {
+  /*app.get("/", function(req, res) {
   // findAll returns all entries for a table when used with no options
   db.Athlete.findAll({}).then(function(dbResult) {
     var athletes = [];
@@ -29,10 +29,10 @@ module.exports = function(app) {
     res.render('index', athletes);
   });  
 
-});    
+});   */ 
 
   // GET route for getting all of the todos
-  app.get("/api/athletes", function(req, res) {
+  /*app.get("/api/athletes", function(req, res) {
 
     // findAll returns all entries for a table when used with no options
     db.Athlete.findAll({}).then(function(dbResult) {
@@ -41,9 +41,9 @@ module.exports = function(app) {
     });
 
     
-  });
+  });*/
 
-  // POST route for saving a new todo. We can create a todo using the data on req.body
+  /*// POST route for saving a new todo. We can create a todo using the data on req.body
   app.post("/api/athletes", function(req, res) {
     console.log(req.body);
     // create takes an argument of an object describing the item we want to
@@ -56,13 +56,13 @@ module.exports = function(app) {
       // We have access to the new todo as an argument inside of the callback function
       res.json(dbResult);
     });   
-  });
+  });*/
 
   
 
   // DELETE route for deleting todos. We can access the ID of the todo to delete in
   // req.params.id
-  app.delete("/api/athletes/:id", function(req, res) {
+  /*app.delete("/api/athletes/:id", function(req, res) {
     // We just have to specify which todo we want to destroy with "where"
     db.Athlete.destroy({
       where: {
@@ -73,21 +73,24 @@ module.exports = function(app) {
     });
 
     
-  });
+  });*/
 
   // PUT route for updating todos. We can access the updated todo in req.body
-  app.put("/api/athletes/:id", function(req, res) {
+  
+
+  // PUT route for updating todos. We can access the updated todo in req.body
+  app.put("/api/athletes", function(req, res) {
     // Update takes in an object describing the properties we want to update, and
     // we use where to describe which objects we want to update
     db.Athlete.update({
-      athleteName: req.body.athleteName,
+      // athleteName: req.body.charName,
       OwnerId: req.body.OwnerId
     }, {
       where: {
         id: req.body.id
       }
-    }).then(function(dbResult) {
-      res.json(dbResult);
+    }).then(function(dbDreamBall) {
+      res.json(dbDreamBall);
     });
   });
 

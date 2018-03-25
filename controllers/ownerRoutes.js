@@ -1,5 +1,10 @@
 var db = require("../models");
 
+if (typeof localStorage === "undefined" || localStorage === null) {
+  var LocalStorage = require('node-localstorage').LocalStorage;
+  localStorage = new LocalStorage('./scratch');
+}
+
 module.exports = function(app) {
   app.get("/api/owners", function(req, res) {
     // findAll returns all entries for a table when used with no options
@@ -11,7 +16,35 @@ module.exports = function(app) {
       });
 
       // We have access to the burgers as an argument inside of the callback function
-      res.render('index', { owners: owners });
+      res.json({ owners: owners });
+    });
+  });
+
+  // get a user by name
+  // primary purpose is to check for existing user in the CreateAccount modal
+  app.get("/api/owners/:name", function(req, res) {
+    // findOne returns a single instance
+    db.Owner.findOne({
+      where: {
+        userName: req.params.name
+      }
+    }).then(function(dbResult) {
+      res.json(dbResult);
+    });
+  });
+
+  // get a user by name and login the user
+  app.get("/api/owners/login/:name", function(req, res) {
+    // findOne returns a single instance
+    db.Owner.findOne({
+      where: {
+        userName: req.params.name
+      }
+    }).then(function(dbResult) {
+      // set the OwnerId into localStorage
+      localStorage.setItem("OwnerId", dbResult.id);
+      // TODO other stuff for login???
+      res.json(dbResult);
     });
   });
 

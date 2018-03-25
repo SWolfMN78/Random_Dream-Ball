@@ -282,6 +282,7 @@ h1, strong{
     color: white;
 }
 
+
 #iRules{
     background-image:url(cheerleadersFans.jpg);
     background-size: 100% 100%;
@@ -289,5 +290,12 @@ h1, strong{
     height:300px;
     font-size: 30px;
     color: white;
+}
+
+
+.my-scroll{
+    height: 300px;
+    width: 100%;
+    overflow: scroll;
 }
 
