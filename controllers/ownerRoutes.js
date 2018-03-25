@@ -1,5 +1,10 @@
 var db = require("../models");
 
+if (typeof localStorage === "undefined" || localStorage === null) {
+  var LocalStorage = require('node-localstorage').LocalStorage;
+  localStorage = new LocalStorage('./scratch');
+}
+
 module.exports = function(app) {
   app.get("/api/owners", function(req, res) {
     // findAll returns all entries for a table when used with no options
@@ -37,7 +42,7 @@ module.exports = function(app) {
       }
     }).then(function(dbResult) {
       // set the OwnerId into localStorage
-      localStorage.setItem(dbResult.OwnerId);
+      localStorage.setItem("OwnerId", dbResult.id);
       // TODO other stuff for login???
       res.json(dbResult);
     });
