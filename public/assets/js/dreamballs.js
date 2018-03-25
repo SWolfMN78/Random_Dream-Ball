@@ -8,6 +8,17 @@ var OwnerId = 0;
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(document).ready(function() {
 
+  $(document).on("click", "li.updateID", changeID);
+  $(document).on("click", "li.updateRosterID", changeRosterID);
+
+  // Getting a reference to the input field where user adds a new Athlete
+  var $newItemInput = $("input.new-item");
+  // Our new Athletes will go inside the dreamballContainer
+  var $dreamballContainer1 = $(".athlete-container1");
+  var $dreamballContainer2 = $(".athlete-container2");
+  //var $dreamballContainer3 = $(".athlete-container3");
+  //var $dreamballContainer4 = $(".athlete-container4");
+
   // fetch the logged in user
   $.get("/api/owners/login/"+username, function(data) {
     // ? TODO ? maybe check localStorage for OwnerId first
@@ -23,21 +34,10 @@ $(document).ready(function() {
       return false;
     }
     console.log("after login, OwnerId:", OwnerId);
+
+    // Getting Athletes from database when page loads
+    getAthletes();
   });
-
-  $(document).on("click", "button.updateID", changeID);
-  $(document).on("click", "button.updateRosterID", changeRosterID);
-  
-  // Getting a reference to the input field where user adds a new Athlete
-  var $newItemInput = $("input.new-item");
-  // Our new Athletes will go inside the dreamballContainer
-  var $dreamballContainer1 = $(".athlete-container1");
-  var $dreamballContainer2 = $(".athlete-container2");
-  //var $dreamballContainer3 = $(".athlete-container3");
-  //var $dreamballContainer4 = $(".athlete-container4");
-
-  // Getting Athletes from database when page loads
-  getAthletes();
 
   //Adding rows of Athletes
   function initializeRows(athletes) {
@@ -114,14 +114,31 @@ $(document).ready(function() {
     }).then(getAthletes);
   }
 
+  function translateSkillIcon(skillName) {
+    skillIcon = "";
+    switch (skillName) {
+      case "Bruiser":
+        // include the ' | ' in the icon to simplify the code later
+        skillIcon = ' | <i class="fab fa-grunt"></i>';
+        break;
+      case "Blocker":
+        skillIcon = ' | <i class="fas fa-shield-alt"></i>';
+        break;
+    }
+    return skillIcon;
+  }
+
   function createNewRow(athlete) {
+    var skillIcon = translateSkillIcon(athlete.SpecialSkill.skillName);
     var $newInputRow = $(
       [
-        "<li class='list-group-item athlete-item'>",
-        "<span>",
+        "<li class='list-group-item athlete-item updateID' id=athlete_"+athlete.id+">",
+        "<p>",
         athlete.athleteName,
-        "<button class='updateID btn btn-primary btn-default'>>>></button>",
-        "</span>",
+        ' | <i class="fas fa-bolt"></i>:'+athlete.powerPoints,
+        skillIcon,
+        ' | <i class="fas fa-dollar-sign"></i>:'+athlete.athleteCost,
+        "</p>",
         "</li>"
       ].join("")
     );
@@ -133,13 +150,16 @@ $(document).ready(function() {
   }
 
   function createRosterRow(athlete) {
+    var skillIcon = translateSkillIcon(athlete.SpecialSkill.skillName);
     var $newRosterRow = $(
       [
-        "<li class='list-group-item athlete-item'>",
-        "<span>",
-        "<button class='updateRosterID btn btn-primary btn-default'><span><<<</span></button>",
+        "<li class='list-group-item athlete-item updateRosterID' id=athlete_"+athlete.id+">",
+        "<p>",
         athlete.athleteName,
-        "</span>",
+        ' | <i class="fas fa-bolt"></i>:'+athlete.powerPoints,
+        skillIcon,
+        ' | <i class="fas fa-dollar-sign"></i>:'+athlete.athleteCost,
+        "</p>",
         "</li>"
       ].join("")
     );
