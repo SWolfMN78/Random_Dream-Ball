@@ -15,6 +15,34 @@ module.exports = function(app) {
     });
   });
 
+  // get a user by name
+  // primary purpose is to check for existing user in the CreateAccount modal
+  app.get("/api/owners/:name", function(req, res) {
+    // findOne returns a single instance
+    db.Owner.findOne({
+      where: {
+        userName: req.params.name
+      }
+    }).then(function(dbResult) {
+      res.json(dbResult);
+    });
+  });
+
+  // get a user by name and login the user
+  app.get("/api/owners/login/:name", function(req, res) {
+    // findOne returns a single instance
+    db.Owner.findOne({
+      where: {
+        userName: req.params.name
+      }
+    }).then(function(dbResult) {
+      // set the OwnerId into localStorage
+      localStorage.setItem(dbResult.OwnerId);
+      // TODO other stuff for login???
+      res.json(dbResult);
+    });
+  });
+
   // POST route for saving a new owner. We can create a athlete using the data on req.body
   app.post("/api/owners/new", function(req, res) {
     console.log(req.body);
