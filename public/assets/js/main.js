@@ -54,9 +54,9 @@ $(document).ready(function() {
 });
 
 //If the user gets a valid login response then move to the next page - this code is still in test and may need mySQL confirmation.
-function WelcomeIn({
+/*function WelcomeIn({
 
-});
+});*/
 
 //Below is the modal information that has been cleaned up.
 $("#modal-custom-signup").iziModal({
