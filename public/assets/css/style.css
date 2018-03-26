@@ -47,6 +47,12 @@
     background-image: no-repeat;
 }
 
+.background3 {
+    background-image: url(../img/dreamballBK3.jpg);
+    background-size: cover;
+    background-image: no-repeat;
+}
+
 .mc1 {
     min-height: 600px;
     height: auto !important;
@@ -82,8 +88,9 @@
     float: left;
 }
 
-
-/* .teEdit {} */
+.iconArea {
+    background-color: #ddd;
+}
 
 
 /*Battle Page CSS*/
@@ -91,6 +98,22 @@
 .btn-group-vertical {
     display: block;
     min-width: 100%;
+}
+
+body {
+    height: 100%;
+    font-family: Amaranth;
+    color: #ddd;
+}
+
+.containerMod {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.winLooseImgWindow {
+    margin: 10px;
+    padding: 3px;
 }
 
 

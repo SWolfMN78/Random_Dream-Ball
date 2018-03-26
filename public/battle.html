@@ -25,68 +25,69 @@
 
 
 <body class="background">
-    <div class="container">
+    <div class="container containerMod">
         <div class="row">
-            <div class="col-sm-4 col-md-4">
-                <div class="col-sm-12 col-md-12">
-                    <div class="teamName">
-                        <h2>Owner's Team</h2>
-                    </div>
-                    <div class="playerBtn">
-                        <div class="btn-group-vertical" data-toggle="buttons">
-                            <button id="b_owner_athlete1" type="button" class="btn btn-primary btn-lg btn-block">Athlete1</button>
-                            <button id="b_owner_athlete2" type="button" class="btn btn-primary btn-lg btn-block">Athlete2</button>
-                            <button id="b_owner_athlete3" type="button" class="btn btn-primary btn-lg btn-block">Athlete3</button>
-                            <button id="b_owner_athlete4" type="button" class="btn btn-primary btn-lg btn-block">Athlete4</button>
-                            <button id="b_owner_athlete5" type="button" class="btn btn-primary btn-lg btn-block">Athlete5</button>
-                            <button id="b_owner_athlete6" type="button" class="btn btn-primary btn-lg btn-block">Athlete6</button>
-                        </div>
-                    </div>
-                    <div>
-                        Score sction
-                        <div class="form-group">
-                            <label class="col-form-label col-form-label-lg disabledInput" for="inputLarge">Large input</label>
-                            <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" id="inputLarge">
-                        </div>
+            <div class="col col-md-4 col-sm-4">
+                <div class="text-center teamName">
+                    <h2>Owner's Team</h2>
+                </div>
+            </div>
+            <div class="col col-md-4 col-sm-4">
+            </div>
+            <div class="col col-md-4 col-sm-4">
+                <div class="text-center teamName">
+                    <h2>Combatant Team</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-4 col-sm-4">
+                <div class="playerBtn">
+                    <div class="btn-group-vertical" data-toggle="buttons">
+                        <button id="b_owner_athlete1" type="button" class="btn btn-primary btn-lg btn-block">Athlete1</button>
+                        <button id="b_owner_athlete2" type="button" class="btn btn-primary btn-lg btn-block">Athlete2</button>
+                        <button id="b_owner_athlete3" type="button" class="btn btn-primary btn-lg btn-block">Athlete3</button>
+                        <button id="b_owner_athlete4" type="button" class="btn btn-primary btn-lg btn-block">Athlete4</button>
+                        <button id="b_owner_athlete5" type="button" class="btn btn-primary btn-lg btn-block">Athlete5</button>
+                        <button id="b_owner_athlete6" type="button" class="btn btn-primary btn-lg btn-block">Athlete6</button>
                     </div>
                 </div>
             </div>
-            <div class="text-center col-sm-4 col-md-4">
-                <div class="row">
-                    <div class="col-sm-12 col-md-12 m-5">
-                        <!--Image will go here for what happens via win or lose-->
-                        <img style="height: 200px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-                            alt="Card image">
-                        <div class="card-body textResultDisplay">
-                            <h4 class="card-text center-align">Results will be displayed here ID- You won!!</h4>
-                        </div>
-                    </div>
+            <div class="col col-md-4 col-sm-4">
+                <!--Image will go here for what happens via win or lose-->
+                <div class="winLoseImgWindow">
+                    <!--Image to be placed here based on win/lose-->
+                    <img style="height: 150px; width: 80%; display: block;" id="iWinLoseSection" src="#" alt="Card image">
+                </div>
+                <div class="card-body textResultDisplay">
+                    <h4 class="card-text center-align">Results will be displayed here ID- You won!!</h4>
                 </div>
             </div>
-            <div class="col-sm-4 col-md-4">
-                <div class="row">
-                    <div class="col-sm-12 col-md-12 text-center">
-                        <div class="teamName">
-                            <h2>Combatant Team</h2>
-                        </div>
-                        <div class="playerBtn">
-                            <div class="btn-group-vertical" data-toggle="buttons">
-                                <button id="b_other_athlete1" type="button" class="btn btn-primary btn-lg btn-block disabled">Athlete 1</button>
-                                <button id="b_other_athlete2" type="button" class="btn btn-primary btn-lg btn-block disabled">Athlete 2</button>
-                                <button id="b_other_athlete3" type="button" class="btn btn-primary btn-lg btn-block disabled">Athlete 3</button>
-                                <button id="b_other_athlete4" type="button" class="btn btn-primary btn-lg btn-block disabled">Athlete 4</button>
-                                <button id="b_other_athlete5" type="button" class="btn btn-primary btn-lg btn-block disabled">Athlete 5</button>
-                                <button id="b_other_athlete6" type="button" class="btn btn-primary btn-lg btn-block disabled">Athlete </button>
-                            </div>
-                        </div>
-                        <div>
-                            Score sction
-                            <div class="form-group">
-                                <label class="col-form-label col-form-label-lg disabledInput" for="inputLarge">Large input</label>
-                                <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" id="inputLarge">
-                            </div>
-                        </div>
-                    </div>
+            <div class="col col-md-4 col-sm-4">
+                <div class="btn-group-vertical" data-toggle="buttons">
+                    <button id="b_other_athlete1" type="button" class="btn btn-primary btn-lg btn-block disabled">Athlete 1</button>
+                    <button id="b_other_athlete2" type="button" class="btn btn-primary btn-lg btn-block disabled">Athlete 2</button>
+                    <button id="b_other_athlete3" type="button" class="btn btn-primary btn-lg btn-block disabled">Athlete 3</button>
+                    <button id="b_other_athlete4" type="button" class="btn btn-primary btn-lg btn-block disabled">Athlete 4</button>
+                    <button id="b_other_athlete5" type="button" class="btn btn-primary btn-lg btn-block disabled">Athlete 5</button>
+                    <button id="b_other_athlete6" type="button" class="btn btn-primary btn-lg btn-block disabled">Athlete </button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-4 col-sm-4 text-center">
+                <fieldset disabled="">
+                    <label class="col-form-label col-form-label-lg disabledInput" for="inputLarge">Player Score</label>
+                    <input class="form-control text-center" id="iPlayerScoreField" type="text" placeholder="score: 00" disabled="">
+                </fieldset>
+            </div>
+            <div class="col col-md-4 col-sm-4">
+
+            </div>
+            <div class="col col-md-4 col-sm-4 text-center">
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-lg disabledInput" for="inputLarge">Combatant's Score</label>
+                    <input class="form-control text-center" id="iGameScoreField" type="text" placeholder="Score: 00" disabled="">
                 </div>
             </div>
         </div>
