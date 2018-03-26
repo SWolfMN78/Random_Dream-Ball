@@ -252,6 +252,10 @@ strong {
     color: white;
 }
 
+legend {
+    text-shadow: 1px 1px #fff !important;
+}
+
 #iNewAccount,
 #iExisting,
 #iRules{

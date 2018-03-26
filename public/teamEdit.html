@@ -165,7 +165,7 @@
                     
                     <div class="row">
                         <div class="col-md-6">
-                            <h3>Roster Info</h3>
+                            <legend>Roster Info</legend>
                             <br>        
                             <ul class="my-scroll list-group athlete-list">
                                 <span class="athlete-container2">
@@ -176,7 +176,7 @@
 <!--==========================================table on the right=============================-->
                         
                         <div class="col-md-6">
-                            <h3>Available Athletes</h3>
+                            <legend>Available Athletes</legend>
                             <br>
                             <ul class=" my-scroll list-group athlete-list">
                                 <span class="athlete-container1">
@@ -190,28 +190,33 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <fieldset disabled="">
-                                <label class="control-label" for="disabledInput"><h3>Player Funds:</h3></label>
+                                <label class="control-label" for="disabledInput"><legend>Player Funds:</legend></label>
                                 <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">
                             </fieldset>
                         </div>
-                        <div class="form-group col-md-6">
+                        <!-- <div class="form-group col-md-6">
                             <fieldset disabled="">
                                 <label class="control-label" for="disabledInput"><h3>Athelete Cost:<h3></label>
                                 <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">
                             </fieldset>
-                        </div>
+                        </div> -->
                     </div>
                 </section>
-                <section><h3>Active LineUp</h3>
+                <section><legend>Active LineUp</legend>
                     <div class="row">
-                        <div class="list-group col-md-12">
-                            <a href="#" class="list-group-item list-group-item-action active">Athelete Data Here</a>
-                            <a href="#" class="list-group-item list-group-item-action">Athelete Data Here</a>
-                            <a href="#" class="list-group-item list-group-item-action disabled">Athelete Data Here</a>
+                        <div class="list-group col-md-6">
+                            <a id="active_athlete1" href="#" class="list-group-item list-group-item-action active">Athelete Data Here</a>
+                            <a id="active_athlete2" href="#" class="list-group-item list-group-item-action">Athelete Data Here</a>
+                            <a id="active_athlete3" href="#" class="list-group-item list-group-item-action disabled">Athelete Data Here</a>
+                        </div>
+                        <div class="list-group col-md-6">
+                            <a id="active_athlete4" href="#" class="list-group-item list-group-item-action active">Athelete Data Here</a>
+                            <a id="active_athlete5" href="#" class="list-group-item list-group-item-action">Athelete Data Here</a>
+                            <a id="active_athlete6" href="#" class="list-group-item list-group-item-action disabled">Athelete Data Here</a>
                         </div>
                     </div>
                 </section>
-                <section> buttons
+                <section>
                     <div class="row">
                         <div class="col-md-3">
                             <button type="button" class="btn btn-primary btn-lg btn-activate">Activate</button>
