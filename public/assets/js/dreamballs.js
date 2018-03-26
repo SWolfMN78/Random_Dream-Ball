@@ -3,7 +3,7 @@ if (typeof localStorage === "undefined" || localStorage === null) {
   localStorage = new LocalStorage('./scratch');
 }
 var username = localStorage.getItem("username");
-var OwnerId = 0;
+var OwnerId = localStorage.getItem("username");
 
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(document).ready(function() {
@@ -20,6 +20,7 @@ $(document).ready(function() {
   //var $dreamballContainer4 = $(".athlete-container4");
 
   // fetch the logged in user
+  // TODO - add logic to just use the OwnerId from localStorage, if available
   $.get("/api/owners/login/"+username, function(data) {
     // ? TODO ? maybe check localStorage for OwnerId first
     //   - depends on how we handle the cover.html page
@@ -37,6 +38,8 @@ $(document).ready(function() {
 
     // Getting Athletes from database when page loads
     getAthletes();
+    // Getting Athletes from database when page loads
+    setActiveAthletes();
   });
 
   //Adding rows of Athletes
@@ -87,12 +90,6 @@ $(document).ready(function() {
 
   // This function gets Athletes from database
   function getAthletes() {
-    // $.get("/api/athletes", function(data) {
-    //   athletes = data;
-    //   initializeRows();
-    //   initializeRosterRows();
-    // });
-
     // get athletes owned by logged in user
     console.log("In getAthletes, OwnerId:", OwnerId);
     $.get("/api/athletes/team/"+OwnerId, function(data) {
@@ -101,6 +98,22 @@ $(document).ready(function() {
     // get unowned athletes
     $.get("/api/athletes/team/1", function(data) {
       initializeRosterRows(data);
+    });
+  }
+
+  // This function gets Athletes from database
+  function setActiveAthletes() {
+    // get active athletes owned by logged in user
+    console.log("In setActiveAthletes, OwnerId:", OwnerId);
+    $.get("/api/athletes/team/active/"+OwnerId, function(data) {
+      athletes = data;
+      for (var i = 0; i < athletes.length; ++i) {
+        var skillIcon = translateSkillIcon(athletes[i].SpecialSkillId);
+        // set the text for the DOM elements of the active athletes
+        var athleteText = athletes[i].athleteName+' | <i class="fas fa-bolt"></i>:'
+                         +athletes[i].powerPoints+skillIcon;
+        $('#active_athlete'+i).html('<p>'+athleteText+'</p>');
+      }
     });
   }
 
@@ -118,10 +131,14 @@ $(document).ready(function() {
     skillIcon = "";
     switch (skillName) {
       case "Bruiser":
+      case "2":
+      case 2:
         // include the ' | ' in the icon to simplify the code later
         skillIcon = ' | <i class="fab fa-grunt"></i>';
         break;
       case "Blocker":
+      case "3":
+      case 3:
         skillIcon = ' | <i class="fas fa-shield-alt"></i>';
         break;
     }

@@ -74,6 +74,49 @@ var team_two = [
   used: false
 }];
 
+if (typeof localStorage === "undefined" || localStorage === null)
+{
+  var LocalStorage = require('node-localstorage').LocalStorage;
+  localStorage = new LocalStorage('./scratch');
+}
+var username = localStorage.getItem("username");
+var OwnerId = localStorage.getItem("username");
+
+// Make sure we wait to attach our handlers until the DOM is fully loaded.
+$(document).ready(function()
+{
+  $(document).on("click", "li.updateID", changeID);
+  $(document).on("click", "li.updateRosterID", changeRosterID);
+
+  // Getting a reference to the input field where user adds a new Athlete
+  var $newItemInput = $("input.new-item");
+  // Our new Athletes will go inside the dreamballContainer
+  var $dreamballContainer1 = $(".athlete-container1");
+  var $dreamballContainer2 = $(".athlete-container2");
+  //var $dreamballContainer3 = $(".athlete-container3");
+  //var $dreamballContainer4 = $(".athlete-container4");
+
+  // fetch the logged in user
+  // TODO - add logic to just use the OwnerId from localStorage, if available
+  $.get("/api/owners/login/"+username, function(data) {
+    // ? TODO ? maybe check localStorage for OwnerId first
+    //   - depends on how we handle the cover.html page
+    //   - maybe need a scheme for clearing OwnerId on 'initial' load???
+    if (data) {
+      console.log("login result:", data);
+      OwnerId = data.id;
+    } else {
+      // TODO better alert
+      // alert user to login
+      alert("Please login to be able to manage your team!");
+      return false;
+    }
+    console.log("after login, OwnerId:", OwnerId);
+
+    // Getting Athletes from database when page loads
+    getAthletes();
+  });
+}
 
 var t1_score = 0;
 var t2_score = 0;
