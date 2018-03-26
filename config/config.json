@@ -1,7 +1,7 @@
 {
     "development": {
         "username": "root",
-        "password": "",
+        "password": "112358",
         "database": "dreamBall_db",
         "host": "localhost",
         "dialect": "mysql"
