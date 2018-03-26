@@ -37,7 +37,10 @@ $(document).ready(function() {
             $("#checkPassword").val("");
             return;
         } else {
-            alert("Match made welcome!");
+            iziToast.success({
+                title: 'Welcome!',
+                message: "We're logging you in now!",
+            });
         }
 
         //check the number of digits in the password field exceed 10 digits.  If so then throw error and stop user
@@ -50,6 +53,19 @@ $(document).ready(function() {
             $("#mainPassWord").val("");
             return;
         }
+    });
+
+    //Basic Button controls
+    /* Added code here for button navigation to the BattleScreen from the TeamEdit file */
+    //when this battle button is clicked it should open the battle page.
+    $("#letBattle").click(function() {
+        window.location.href = "battle.html";
+        return false;
+    });
+
+    //when clicked confirm if they want to leave the program.  If confirmed as yes then thank and exit.
+    $(".btn-exit").click(function() {
+        //text to be placed.
     });
 });
 
@@ -82,14 +98,14 @@ $("#modal-custom-login").iziModal({
 });
 
 $("#modal-custom-rules").iziModal({
-  history: false,
-  overlayClose: false,
-  width: 1200,
-  overlayColor: 'rgba(0, 0, 0, 0.6)',
-  transitionIn: 'bounceInDown',
-  transitionOut: 'bounceOutDown',
-  navigateCaption: true,
-  navigateArrows: "false",
+    history: false,
+    overlayClose: false,
+    width: 1200,
+    overlayColor: 'rgba(0, 0, 0, 0.6)',
+    transitionIn: 'bounceInDown',
+    transitionOut: 'bounceOutDown',
+    navigateCaption: true,
+    navigateArrows: "false",
 });
 
 $(document).on('click', '#iNewAccount', function(event) {
@@ -145,7 +161,7 @@ $("#modal-custom-signup").on('click', 'button.submit', function() {
                         // so, for now, store the username in localStorage
                         localStorage.setItem("username", newOwner.userName);
                         //Shift the screen to the next page at this point.
-                        window.location.replace("teamEdit.html");
+                        window.location.href = ("teamEdit.html");
                         // now dismiss the modal and switch to teamEdit
                         // TODO
                     }
@@ -180,7 +196,7 @@ $("#modal-custom-login").on('click', 'button.submit', function() {
                 // now dismiss the modal and switch to teamEdit
                 // TODO
                 //Shift the screen to the next page at this point.
-                window.location.replace("teamEdit.html");
+                window.location.href = ("teamEdit.html");
                 // Note *** The following will need to be valdated that it loads that owners info.
             } else {
                 // TODO popup/alert to choose new username
