@@ -19,7 +19,6 @@ module.exports = function(app) {
 
   // route to return all athletes owned by one owner
   app.get("/api/athletes/team/:OwnerId", function(req, res) {
-    // findAll returns all entries for a table when used with no options
     db.Athlete.findAll({
       attributes: ['id', 'athleteName', 'homePlanet', 'powerPoints', 'athleteCost', 'isActive', 'athleteInjured', 'OwnerId'],
       where: {
@@ -48,6 +47,30 @@ module.exports = function(app) {
 
       // We have access to the athletes as an argument inside of the callback function
       // res.json({ athletes: athletes });
+      res.json( athletes );
+    });
+  });
+
+// route to return all athletes owned by one owner
+  app.get("/api/athletes/team/active/:OwnerId", function(req, res) {
+    db.Athlete.findAll({
+      attributes: ['id', 'athleteName', 'homePlanet', 'powerPoints', 'OwnerId', 'SpecialSkillId'],
+      where: {
+        OwnerId: req.params.OwnerId,
+        isActive: true
+      },
+      order: [
+        // order the result by cost
+        ['athleteCost', 'DESC']
+      ]
+    }).then(function(dbResult) {
+      var athletes = [];
+
+      dbResult.map(function(athlete) {
+        athletes.push(athlete.dataValues);
+      });
+
+      // We have access to the athletes as an argument inside of the callback function
       res.json( athletes );
     });
   });

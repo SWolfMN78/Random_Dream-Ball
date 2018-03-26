@@ -100,3 +100,11 @@ INSERT INTO athletes (athleteName, homePlanet, powerPoints, SpecialSkillId, athl
 ('Titanio', 'Grore 269',1,1,1,'2018-01-01 00:00:00','2018-01-01 00:00:00'),
 ('The Nuclear Duke',  'Basmion',1,1,1,'2018-01-01 00:00:00','2018-01-01 00:00:00');
 -- must have a ; at end of last line
+
+-- seed the first AI team
+UPDATE `dreamBall_db`.`Athletes` SET `OwnerId`='2' WHERE `id`='2';
+UPDATE `dreamBall_db`.`Athletes` SET `OwnerId`='2' WHERE `id`='5';
+UPDATE `dreamBall_db`.`Athletes` SET `OwnerId`='2' WHERE `id`='72';
+UPDATE `dreamBall_db`.`Athletes` SET `OwnerId`='2' WHERE `id`='93';
+UPDATE `dreamBall_db`.`Athletes` SET `OwnerId`='2' WHERE `id`='97';
+UPDATE `dreamBall_db`.`Athletes` SET `OwnerId`='2' WHERE `id`='100';
