@@ -53,13 +53,6 @@
     background-image: no-repeat;
 }
 
-.mc1 {
-    min-height: 600px;
-    height: auto !important;
-    height: 600px;
-    background-color: #777;
-}
-
 .welcImg {
     width: 90%;
     height: 270px;
@@ -70,11 +63,38 @@
     border-top: #000000 solid 2px;
     text-align: center;
     width: 100%;
-    font-size: 6pt;
+    font-size: 10pt;
     color: #ffffff80;
     padding: 5px;
     position: fixed;
     bottom: 0px;
+}
+
+.hoverToolTip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.hoverToolTip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+    font-size: 12pt;
+}
+
+.hoverToolTip:hover .tooltiptext {
+    visibility: visible;
 }
 
 
@@ -125,9 +145,11 @@ body {
     height: 30px;
 }
 
+
+/* 
 p {
     font-size: 18px;
-}
+} */
 
 .modal-custom {
     display: none;
