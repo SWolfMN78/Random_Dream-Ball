@@ -19,6 +19,8 @@ Program which will be a fantasy league like game where players will be able to c
 
 ![initial start](/screenshots/teamEdit.png)
 
+
 ![initial start](/screenshots/coverscreen.png)
+
 
 ![initial start](/screenshots/Battle.png)
