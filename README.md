@@ -16,11 +16,13 @@ Program which will be a fantasy league like game where players will be able to c
 
 
 
-
-![initial start](/screenshots/teamEdit.png)
-
-
+#### Cover page where you sign in as a new or returning player or brush up on the rules before the games begin.  
 ![initial start](/screenshots/coverscreen.png)
 
 
+#### Team page here you choose your team and prepair for battle.
+![initial start](/screenshots/teamEdit.png)
+
+
+#### Battle page where all the fun begins choose your greatest player and begin the battle.
 ![initial start](/screenshots/Battle.png)
