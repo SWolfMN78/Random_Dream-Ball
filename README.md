@@ -16,13 +16,13 @@ Program which will be a fantasy league like game where players will be able to c
 - Fantasy name generators by http://www.fantasynamegenerators.com/
 
 
-#### Cover page where you sign in as a new or returning player or brush up on the rules before the games begin.  
+## Cover page where you sign in as a new or returning player or brush up on the rules before the games begin.  
 ![initial start](/screenshots/coverscreen.png)
 
 
-#### Team page here you choose your team and prepared for battle.
+## Team page here you choose your team and prepared for battle.
 ![initial start](/screenshots/teamEdit.png)
 
 
-#### Battle page where all the fun begins choose your greatest player and begin the battle.
+## Battle page where all the fun begins choose your greatest player and begin the battle.
 ![initial start](/screenshots/Battle.png)
