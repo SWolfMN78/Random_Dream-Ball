@@ -26,3 +26,7 @@ Program which will be a fantasy league like game where players will be able to c
 
 ### Battle page where all the fun begins choose your greatest player and begin the battle.
 ![initial start](/screenshots/Battle.png)
+
+
+#### Created by Three Corners & One Center 
+#### Group Project for University of Minnesota coding bootcamp
