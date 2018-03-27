@@ -1,8 +1,3 @@
-if (typeof localStorage === "undefined" || localStorage === null) {
-    var LocalStorage = require('node-localstorage').LocalStorage;
-    localStorage = new LocalStorage('./scratch');
-}
-
 var userName = "";
 var password = "";
 var confirmation = "";
@@ -138,16 +133,20 @@ $("#modal-custom-signup").on('click', 'button.submit', function() {
                     type: "POST",
                     data: newOwner
                 }).then(
-                    function() {
+                    function(owner) {
                         console.log("created new User");
 
                         // one thing we need to do is have the OwnerId available to the app
                         // so, for now, store the username in localStorage
-                        localStorage.setItem("username", newOwner.userName);
+                        // localStorage.setItem("username", newOwner.userName);
                         //Shift the screen to the next page at this point.
-                        window.location.replace("teamEdit.html");
+                        // window.location.replace("teamEdit.html");
                         // now dismiss the modal and switch to teamEdit
                         // TODO
+                        $.ajax("/teamEdit", {
+                            type: "GET",
+                            data: owner
+                        });
                     }
                 );
             }
@@ -166,7 +165,7 @@ $("#modal-custom-login").on('click', 'button.submit', function() {
         }
     }
     // first, check if username exists
-    $.ajax("/api/owners/login/" + loginOwner.userName, {
+    $.ajax("/api/owners/" + loginOwner.userName, {
         type: "GET",
         data: loginOwner
     }).then(
@@ -175,19 +174,24 @@ $("#modal-custom-login").on('click', 'button.submit', function() {
             if (owner) {
                 // one thing we need to do is have the OwnerId available to the app
                 // so, for now, store the username in localStorage
-                localStorage.setItem("username", loginOwner.userName);
+                // localStorage.setItem("username", loginOwner.userName);
 
                 // now dismiss the modal and switch to teamEdit
                 // TODO
                 //Shift the screen to the next page at this point.
-                window.location.replace("teamEdit.html");
+                // window.location.replace("teamEdit.html");
+                $.ajax("/teamEdit", {
+                    type: "GET",
+                    data: owner
+                });
+
                 // Note *** The following will need to be valdated that it loads that owners info.
             } else {
-                // TODO popup/alert to choose new username
+                // popup/alert database error
                 iziToast.warning({
                     timeout: 5000,
-                    title: 'Exisiting Owner',
-                    message: "Username already exists, please choose a new one!",
+                    title: 'Database Error',
+                    message: "Could not fetch User record!",
                 });
                 return false;
             }

@@ -22,11 +22,22 @@ app.use(bodyParser.json());
 // Static directory
 app.use(express.static("public"));
 
+// use Handlebars
+var exphbs = require("express-handlebars");
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
 // Routes
 // =============================================================
-require("./controllers/htmlRoutes.js")(app);
-require("./controllers/athleteRoutes.js")(app);
-require("./controllers/ownerRoutes.js")(app);
+// require("./controllers/htmlRoutes.js")(app);
+// require("./controllers/athleteRoutes.js")(app);
+// require("./controllers/ownerRoutes.js")(app);
+var htmlRoutes    = require("./controllers/htmlRoutes.js");
+var athleteRoutes = require("./controllers/athleteRoutes.js");
+var ownerRoutes   = require("./controllers/ownerRoutes.js");
+app.use(htmlRoutes);
+app.use(athleteRoutes);
+app.use(ownerRoutes);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
