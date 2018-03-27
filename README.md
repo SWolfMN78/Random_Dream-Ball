@@ -20,7 +20,7 @@ Program which will be a fantasy league like game where players will be able to c
 ![initial start](/screenshots/coverscreen.png)
 
 
-#### Team page here you choose your team and prepair for battle.
+#### Team page here you choose your team and prepared for battle.
 ![initial start](/screenshots/teamEdit.png)
 
 
