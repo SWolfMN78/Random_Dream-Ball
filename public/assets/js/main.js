@@ -58,7 +58,7 @@ $(document).ready(function() {
     //Basic Button controls
     /* Added code here for button navigation to the BattleScreen from the TeamEdit file */
     //when this battle button is clicked it should open the battle page.
-    $("#letBattle").click(function() {
+    $("#btnBattle").click(function() {
         window.location.href = "battle.html";
         return false;
     });

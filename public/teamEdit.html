@@ -25,7 +25,102 @@
 
 <body class="background2">
     <div class="container">
+        <div class="row">
+            <div class="col col-sm-6 col-md-6">
+                <div class="row">
+                    <legend>Team Info Section</legend>
+                    <div class=" col-md-12 form-group row">
+                        <label class="col-md-2 col-form-label" for="teamName">Team Name:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="iTeamName" aria-describedby="teamNameInfo" placeholder="Enter your team's name">
+                        </div>
+                        <label class="col-md-2 col-form-label" for="teamName">Team Motto:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="iTeamMotto" aria-describedby="teamNameInfo" placeholder="Enter your team's slogan!">
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!--Moved the infomration from a table to a a-href list grouping.  Additional list shoudl be dynamically created based on need.-->
+                    <div class="col-md-6">
+                        <legend>Roster Info</legend>
+                        <br>
+                        <ul class="my-scroll list-group athlete-list">
+                            <span class="athlete-container2"></span>
+                        </ul>
+                        <div class="form-group col">
+                            <fieldset disabled="">
+                                <label class="control-label" for="disabledInput"><legend>Player Funds:</legend></label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." value="Unit Cost: $00" disabled="">
+                            </fieldset>
+                        </div>
+                    </div>
+                    <!--==========================================table on the right=============================-->
+                    <div class="col-md-6">
+                        <legend>Available Athletes</legend>
+                        <br>
+                        <ul class=" my-scroll list-group athlete-list">
+                            <span class="athlete-container1"></span>
+                        </ul>
+                        <div class="form-group col">
+                            <fieldset disabled="">
+                                <label class="control-label" for="disabledInput"><legend>Unit Cost:</legend></label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Unit Cost:$" value="Unit Cost: $00" disabled="">
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col align-self-center">
+                <div class="row text-center">
+                    <legend>Active LineUp</legend>
+                    <div class="list-group active col-sm-6 col-md-6 ">
+                        <ul>
+                            <li id="active_athlete4" class="list-group-item athlete-item active">Athelete Data Here</li>
+                            <li id="active_athlete3" class="list-group-item athlete-item active">Athelete Data Here</li>
+                            <li id="active_athlete4" class="list-group-item athlete-item active">Athelete Data Here</li>
+                        </ul>
+                    </div>
+                    <div class="list-group col-sm-6 col-md-6">
+                        <ul>
+                            <li id="active_athlete4" class="list-group-item athlete-item active">Athelete Data Here</li>
+                            <li id="active_athlete3" class="list-group-item athlete-item active">Athelete Data Here</li>
+                            <li id="active_athlete4" class="list-group-item athlete-item active">Athelete Data Here</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 m-1 hoverToolTip">
+                        <button type="button" class="btn btn-primary btn-lg btn-block" id="btnActivate">Activite
+                                <span class="tooltiptext">Add roster Athelete to active roster</span>
+                        </button>
+                    </div>
 
+                    <div class="col-sm-12 m-1 hoverToolTip">
+                        <button type="button" class="btn btn-primary btn-lg btn-block" id="btnDeactivite">Deactivate
+                                <span class="tooltiptext">Remove an athelte from the active roster</span>
+                        </button>
+                    </div>
+                    <div class="col-sm-12 m-1 hoverToolTip">
+                        <button type="button" class="btn btn-primary btn-lg btn-block" id="btnBattle">Battle
+                                <span class="tooltiptext">To battle for glory!</span>
+                        </button>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col-sm-12 m-1 hoverToolTip">
+                        <button type="button" class="btn btn-primary btn-lg btn-block" id="btnExit">Exit
+                                <span class="tooltiptext">Exit the game</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     </div>
 
     <!-- Footer -->

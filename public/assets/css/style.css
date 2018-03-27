@@ -78,7 +78,7 @@
 
 .hoverToolTip .tooltiptext {
     visibility: hidden;
-    width: 120px;
+    width: 400px;
     background-color: black;
     color: #fff;
     text-align: center;
@@ -90,7 +90,7 @@
     top: 100%;
     left: 50%;
     margin-left: -60px;
-    font-size: 12pt;
+    font-size: 10pt;
 }
 
 .hoverToolTip:hover .tooltiptext {
@@ -108,8 +108,9 @@
     float: left;
 }
 
-.iconArea {
-    background-color: #ddd;
+.athlete-item {
+    width: 200px;
+    height: 75px;
 }
 
 
