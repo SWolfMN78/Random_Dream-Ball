@@ -305,6 +305,19 @@ legend {
     text-shadow: 1px 1px #fff !important;
 }
 
+legend,
+li,
+.col-form-label {
+    color: #3E3F3A;
+}
+
+button:hover,
+.updateID:hover,
+.updateRosterID:hover
+{
+  cursor: pointer;
+}
+
 #iNewAccount,
 #iExisting,
 #iRules {
