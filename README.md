@@ -11,7 +11,7 @@ Program which will be a fantasy league like game where players will be able to c
 - npm
 - sequelize
 
-
+- Bootswatch https://bootswatch.com/sandstone/
 
 ![initial start](/screenshots/teamEdit.png)
 
