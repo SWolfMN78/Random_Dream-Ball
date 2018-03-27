@@ -11,9 +11,10 @@ Program which will be a fantasy league like game where players will be able to c
 - npm
 - sequelize
 
-- Bootswatch by https://bootswatch.com/sandstone/
-- Modal plugin by http://izimodal.marcelodolce.com/#modal-default
-- Fantasy name generators by http://www.fantasynamegenerators.com/
+- Bootswatch at https://bootswatch.com/sandstone/
+- Modal plugin at http://izimodal.marcelodolce.com/#modal-default
+- Font awesome at https://www.bootstrapcdn.com/fontawesome/
+- Fantasy name generators at http://www.fantasynamegenerators.com/
 
 
 ### Cover page where you sign in as a new/returning player or brush up on the rules before entering the battle of a lifetime.  
