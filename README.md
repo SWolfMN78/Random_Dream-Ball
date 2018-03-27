@@ -13,7 +13,7 @@ Program which will be a fantasy league like game where players will be able to c
 
 - Bootswatch by https://bootswatch.com/sandstone/
 - Modal plugin by http://izimodal.marcelodolce.com/#modal-default
-
+- Fantasy name generators by http://www.fantasynamegenerators.com/
 
 
 #### Cover page where you sign in as a new or returning player or brush up on the rules before the games begin.  
